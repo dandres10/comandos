@@ -1,0 +1,34 @@
+tsc --version [mirar que version de typescript se tiene]
+tsc --init [crear el archivo tsconfig.json]
+/*compilar*/
+tsc src/tipos-basicos/tipos-basicos.ts [se le pasa el archivo al compilador]
+node .\tipos-basicos.js [se ejecuta el .js con node y la direccion del archivo js]
+tsc --watch [observar todos cambios del poryecto]
+/*Angular CLI*/
+--instalacion 
+npm install -g @angular/cli [instalar angular cli]
+ng new edteam-angular [crear un proyecto de angular]
+ng new edteam-angular --routing [modulo manipulacion de rutas]
+ng new edteam-angular --prefix ed [repfijos ejemplo: ed.lista]
+ng new edteam-angular --prefix ed --routing [crear el proyecto conrutas y un prefijo]
+npm install [tener instalado node.js - se crea la carpeta node_modules]
+yarn install [otra forma de instalar la carpeta node_modules]
+@NgModule [estones un decorador de clase]
+ng build --prod [generar la carpeta disk para poder desplegar la aplicacion de manera real - comprimir mi aplicacion]
+npm install -g http-server [un servidor como un apache]
+http-server dist [ejecutar el servidor y probar el funcionamiento de nuestro proyecto en modo de produccion]
+ng test [ejecutar los test]
+ng g c login [generar un componente]
+ng g class usuario [generar una clase]
+ng g m login [generar un modulo]
+/*material*/
+material.angular.io
+ng g m material --module app [relacionado con el  modulo app y  se crea el modulo o carpeta material]
+/*datos*/
+ng g interface shared/model/estudiante [generar una interface]
+ng g class shared/model/class-estudiante [generar una clase]
+ng g service shared/services/nasa-api --module app [generar un servicio]
+ng g pipe shared/pipes/lower-case --module app [generar un pipe]
+ng g d shared/directives/datepicker [generar una directiva]
+
+

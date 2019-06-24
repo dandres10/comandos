@@ -1,0 +1,4 @@
+npm install -g create-react-app [instalar react de manera global]
+npx create-react-app  --typescript [crear un proyecto]
+npx create-react-app my-app [crear un nuevo proyecto sin typescript]
+npm start [levantar la aplicacion]
