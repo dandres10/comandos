@@ -1,1 +1,133 @@
 mysql -u root -h localhost -p [login de mysql "usuario","host o ip","password"]
+show databases [ver que base de datos se tiene]
+use perros [usar una base de datos ]
+show tables [mostrar que tablas tiene la base de datos en donde estoy parado]
+select database(); [mirar en que base de datos estoy parado]
+create database platzi_operation; [crear una base de datos]
+create database  if not exists platzi_operation; [crear una base de datos si no existe aun]
+show warnings; [ver los errores que lanza al momento de ingresar algun comando]
+select * from tabla where client_id =4 \G [el resulatado se muestra mas legible]
+mysql -u root -h localhost -p -D basededatosnombre < all_data.sql [ejecutar un query que esta en un archivo en una base de datos especifica]
+mysql -u root  -p < all_db.sql [insertar archivo sql que solo crea tablas o que se ejecute todo de una]
+
+----------------------------------------- [creacion de tablas]
+[tabla 1]
+CREATE TABLE IF NOT EXISTS books (
+`book_id` INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+`author_id` INTEGER UNSIGNED ,
+`title` VARCHAR(100) NOT NULL,
+`year` INTEGER UNSIGNED NOT NULL DEFAULT 1900,
+`language` VARCHAR(2) NOT NULL DEFAULT 'ES' COMMENT 'ISO 639-1 LANGUAJE',
+`cover_url` VARCHAR (500),
+`price` DOUBLE (6,2) NOT NULL DEFAULT 10.0,
+`sellable` TINYINT(1) DEFAULT 1,
+`copies` INTEGER NOT NULL DEFAULT 1,
+`description` TEXT 
+)
+[tabla 2]
+create table if not exists authors (
+author_id integer unsigned primary key auto_increment,
+name varchar(100) not null,
+nationality varchar(3)
+);
+[tabla 3]
+create table clients (
+client_id int(10) unsigned primary key auto_increment,
+name varchar(50) not null,
+email varchar(100) not null unique,
+birthdate datetime,
+gender enum('M','F','ND') not null,
+active TINYINT(1) not null DEFAULT 1,
+created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+update_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)
+
+UNSIGNED [que sea de ese tipo]
+`year` [evitar confictos con palabras reservadas de mysql, se encierran entre ``]
+unique [este campo de la tabla es unico] 
+CURRENT_TIMESTAMP[toma el valor de la hora de la computadora y lo inserta, se guarda en segundos]
+enum [estandarizar unos valores que va a ir en ese campo]
+update_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP [actualiza la hora si se llega a modificar la dupla]
+----------------------------------------- [fin de la creacion de las tablas]
+select * from authors [pinta lo que contiene la tabla]
+drop table authors [borrar una tabla o data base, en este caso es una tabla]
+describe authors [ver la estructura de la tabla, tipos de datos etc.]
+show full columns from books [ver la estructura de la tabla aun mas detallada]
+--------------------------------------------[insertar en una tabla]
+[forma 1]
+INSERT INTO authors(author_id,name,nationality) values ('','Juan Rulfo','MEX');
+[forma 2]
+INSERT INTO authors(name,nationality) values ('Gabriel Garcia Marquez','COL');
+[forma 3]
+INSERT INTO authors values('','Juan Gabriel Vasquez','COL');
+[forma 4]
+INSERT INTO authors(name,nationality) values ('Juan Rulfo','MEX');
+
+[insertar varios, se puede escoger cualquiera sentencia o "forma" forma 4 en este caso]
+INSERT INTO authors(name,nationality) values
+ ('Julio Cortazar','ARG'),
+('Isabel Allende','CHI'),
+('Octavio Paz', 'MEX'),
+('Juan Carlos Onetti','URU');
+
+INSERT INTO clients(name,email,birthdate,gender,active) VALUES
+('Maria Dolores Gomez','Maria.Dolores.95983222J@random.names','1971-06-06','F',1),
+('Adrian Fernandez','Adrian.55818851J@random.names','1970-04-09','M',1),
+('Maria Luisa Marin','Maria.Luisa.83726282A@random.names','1957-07-30','F',1),
+('Pedro Sanchez','Pedro.78522059J@random.names','1992-01-31','M',1)
+
+-----------------[actualizar esta dupla si y solo si hay una primary key identica, si no, se inserta el dato ]
+INSERT INTO clients(name,email,birthdate,gender, active)
+VALUES ('Andres Leon','Andres.Leon@gmail.com','1971-06-06','M',0)
+ON DUPLICATE KEY UPDATE gender= VALUES(gender); 
+
+-----------[insert con una consulta en el value]
+
+INSERT INTO books (title,author_id,`year`)
+VALUES ('Vuelta al laberinto de la soledad',
+(SELECT author_id FROM authors WHERE name = 'Octavio Paz' LIMIT 1) ,
+1960
+);
+---------------------------------------[fin de insertar]
+
+-----------[select el rey]
+select name from clients; [seleccionar que columna traer de la tabla]
+select name,email from clients; [seleccionar que columna traer de la tabla]
+select name,email,gender from clients LIMIT 10; [condultar cierta cantidad]
+select name,email,gender from clients where gender = 'M'; [uso de where]
+-------------[fin del select]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
