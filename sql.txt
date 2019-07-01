@@ -1,1 +1,1 @@
-	
+mysql -u root -h localhost -p [login de mysql "usuario","host o ip","password"]
