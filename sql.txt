@@ -9,7 +9,8 @@ show warnings; [ver los errores que lanza al momento de ingresar algun comando]
 select * from tabla where client_id =4 \G [el resulatado se muestra mas legible]
 mysql -u root -h localhost -p -D basededatosnombre < all_data.sql [ejecutar un query que esta en un archivo en una base de datos especifica]
 mysql -u root  -p < all_db.sql [insertar archivo sql que solo crea tablas o que se ejecute todo de una]
-
+select DISTINCT [quita datos repetidos]
+truncate trasactions; [eliminar datos de una tabla sin borrar la tabla]
 ----------------------------------------- [creacion de tablas]
 [tabla 1]
 CREATE TABLE IF NOT EXISTS books (
@@ -95,9 +96,128 @@ select name from clients; [seleccionar que columna traer de la tabla]
 select name,email from clients; [seleccionar que columna traer de la tabla]
 select name,email,gender from clients LIMIT 10; [condultar cierta cantidad]
 select name,email,gender from clients where gender = 'M'; [uso de where]
+[funcniones de mysql]
+select year(birthdate) from clients; [selecciona solo el año de la fecha]
+select now(); [selecciona la hora del pc]
+select year(now()); [selecciona el año de la fecha de la computadora]
+select year(now()) - year(birthdate) from clients; [selecciona el año de la fecha de la computadora y lo resta con el año del la fecha de cumpleaños de la persona para saber la edad]
+select name, year(now()) - year(birthdate) from clients; [se trae el año de la persona con su nombre]
+select * from clients where name LIKE '%Saave%'; [nombre o apellido tengan estas letras]
+select name, year(now()) - year(birthdate) AS edad, gender from clients where gender = 'F' AND name LIKE '%Lop%'; [como se usa and y un alias ]
+[fin de fuciones]
+select count(*) from authors; [contar cuantas duplas se tiene en esa tabla]
+select book_id, author_id,title from books where author_id between 1 and 5; [seleccionar los datos que esten entre ese rango "between"]
+
+[inner join 1]
+select b.book_id, a.name, a.author_id, b.title from books as b 
+join authors as a 
+on a.author_id = b.author_id
+where a.author_id between 1 and 5;
+
+[inner join 2]
+select c.name, b.title, a.name, t.type from transactions as t 
+join books as b 
+on t.book_id = b.book_id
+join clients as c 
+on t.client_id = c.client_id 
+join authors as a 
+on b.author_id = a.author_id
+where c.gender = 'M' and t.type IN('sell','lend');
+
+[left inner join 3 trae los datos nulos]
+select a.author_id, a.name, a.nationality, COUNT(b.title)
+ from authors as a
+ left join books as b 
+ on b.author_id = a.author_id
+ where a.author_id between 1 and 5
+ GROUP BY a.author_id
+ order by a.author_id;
 -------------[fin del select]
 
+*************************************************************************************[5 casos de negocio]
+***********************************************************[cuantos escritores hay de cada nacionalidad]
+---------------------------------------------------[no hay duplicaciones en la respuesta de la consulta]
+select  DISTINCT nationality from authors order by nationality; 
+-------------------------------------------------------[mejorando el query]
+select nationality, count(author_id) as c_authors
+from authors 
+where nationality IS NOT NULL
+GROUP BY nationality 
+ORDER BY c_authors DESC, nationality ASC; 
+---------------------------------------------------------[no traerme ciertos datos de una columna]
+select nationality, count(author_id) as c_authors
+from authors 
+where nationality NOT IN ('RUS','AUT')
+GROUP BY nationality 
+ORDER BY c_authors DESC, nationality ASC; 
+---------------------------------------------------------[ traerme ciertos datos de una columna]
+select nationality, count(author_id) as c_authors
+from authors 
+where nationality IN ('RUS','AUT')
+GROUP BY nationality 
+ORDER BY c_authors DESC, nationality ASC; 
+***********************************************************[cual es el promedio de los libros y desviacion]
+select AVG(price) from books;
+select nationality,
+COUNT(book_id) as libros,
+ AVG(price) as prom,
+ STDDEV(price) as std
+from books as b
+join authors as a 
+on a.author_id = b.author_id
+GROUP BY nationality
+ORDER BY libros DESC;
+***********************************************************[cual es el precio maximo y minimo de un libro]
+select MAX(price),MIN(price) from books;
+select nationality, MAX(price),MIN(price) 
+from books as b
+join authors as a 
+on a.author_id = b.author_id
+group by nationality;
+***********************************************************[reporte final]
+select  c.name, t.type, b.title,a.name, a.nationality
+from transactions AS t
+left join clients as c 
+on c.client_id = t.client_id
+left join books as b 
+on  b.book_id = t.book_id
+left join authors as a 
+on b.author_id = a.author_id;
 
+select  c.name, t.type, b.title,
+CONCAT(a.name,"(", a.nationality, ")") as autor,
+TO_DAYS(NOW()) - TO_DAYS(t.created_at) as  ago
+from transactions AS t
+left join clients as c 
+on c.client_id = t.client_id
+left join books as b 
+on  b.book_id = t.book_id
+left join authors as a 
+on b.author_id = a.author_id;
+
+----------------[fin de los casos de negocio]
+
+---------------[comados update y delete]
+select * from authors order by rand() limit 10;
+delete from authors where author_id = 161 limit 1;
+select client_id, name from clients where active <> 1;
+update clients
+set active  = 0
+where client_id = 80
+LIMIT 1; 
+select client_id, name, active from clients where client_id in (80,65,76,1,61,7,19,97); 
+
+----------------[fin de comandos update y delete]
+
+[cambiar datos de las tablas]
+alter table authors add column birthyear integer default 1930 after name; 
+alter table authors modify column birthyear year default 1920;
+alter table authors  drop column birthyear;
+
+
+
+----------------[importante]
+mysqldump -u root -p -d pruebaplatzi > esquema.sql [para versionar es muy util, para crear las tablas y la base de datos , las tablas no llevan datos]
 
 
 
