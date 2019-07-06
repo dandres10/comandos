@@ -114,6 +114,9 @@ join authors as a
 on a.author_id = b.author_id
 where a.author_id between 1 and 5;
 
+
+
+
 [inner join 2]
 select c.name, b.title, a.name, t.type from transactions as t 
 join books as b 
