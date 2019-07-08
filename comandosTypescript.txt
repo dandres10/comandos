@@ -1,0 +1,24 @@
+
+01. descargar e instalar node.js [para ver si ya esta instalado con el comando node -v "en la consola de windows" ]
+02. npm install -g typescript [instalar de manera global para utilizar typescript en cualquier lugar de mi pc]
+03. tsc [escribir en la consola de windows para verifica la correcta instalacion de comando 2.]
+04. tsc holaMundo.ts [compilar un archivo .ts y se genera el archivo .js]
+05. tsc holaMundo.ts -w [para transpilar automaticamente "modo observador"]
+06. node holaMundo.js [ejecutar en la consola un archivo .js]
+07. tsc --target ES2016 get_set [ejecutar don una version de ecmaescript en particular]
+08.
+09.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+
+
+ 
