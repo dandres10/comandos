@@ -6,7 +6,7 @@
 05. tsc holaMundo.ts -w [para transpilar automaticamente "modo observador"]
 06. node holaMundo.js [ejecutar en la consola un archivo .js]
 07. tsc --target ES2016 get_set [ejecutar don una version de ecmaescript en particular]
-08.
+08. tsc -init [crear el archivo de configuracion json]
 09.
 10.
 11.
