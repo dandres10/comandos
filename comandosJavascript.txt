@@ -1,0 +1,11 @@
+--se ejecutan en la consola de chrome
+01. window.nombre [ver que tiene una variable (solo variables globales)]
+02. control + l [limpiar la consola de chrome]
+03. control + shif + r [borrar la cache del navegador]
+04.
+05.
+06.
+07.
+08.
+09.
+10.

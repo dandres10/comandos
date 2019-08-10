@@ -1,0 +1,50 @@
+npm install -g create-react-app [instalar react de manera global]
+npx create-react-app  --typescript [crear un proyecto]
+npx create-react-app my-app [crear un nuevo proyecto sin typescript]
+npm start [levantar la aplicacion]
+npm install react-router-dom
+npm install md5 [cifrar cadenas de texto]
+------montar un servidor 
+Para esta clase es necesario hacer ciertas cosas antes o no funcionará nada correctamente y no sabréis por qué. Falta un trozo de vídeo (creo) en la edición, y no se explican unos pasos intermedios necesarios. Estos pasos se entienden si se hacen y luego se mira el vídeo.
+
+Lo primero, tenéis que descargaros 2 cosas, la carpeta ‘server’ junto con el archivo ‘api.js’. La carpeta server entera, a la altura de la carpeta src. El archivo api.js debe estar dentro de src. Lo tenéis todo en ‘Archivos y Enlaces’ arriba a la derecha.
+
+Seguidamente es necesario abrir la terminal e instalar las siguientes dependencias:
+
+faker (Crea un servicio ‘falso’ de datos para nuestra petición a la api creada por Richard)
+json-server (Crea nuestra falso puerto 3001 para la petición a la api)
+npm-run-all (cuidado, no es run-all que también existe)
+
+Se pueden hacer al mismo tiempo todas:
+
+npm install faker json-server npm-run-all --save-dev
+
+Finalmente entramos en el archivo ‘package.json’ y reescribimos los ‘scripts’ para que quede de la siguiente forma:
+
+“scripts”: {
+“start”: “npm-run-all -p client server”,
+“client”: “react-scripts start”,
+“server”: “json-server --port 3001 --watch server/db.json”,
+“seed”: “node server/seed.js”,
+“build”: “react-scripts build”,
+“test”: “react-scripts test”,
+“eject”: “react-scripts eject”
+}
+
+Explicados:
+
+“start”: “npm-run-all -p client server”,
+Ejecuta todos los scripts a una
+
+“server”: “json-server --port 3001 --watch server/db.json”,
+Crea un servidor falso con un puerto 3001 y unos datos que busca la api en el archivo especificado.
+
+“seed”: “node server/seed.js”,
+Crea los datos falsos
+
+Volvemos a la terminal y tecleamos:
+
+npm run start
+
+¡¡¡Listo!!!
+--------------------------------[final de montar el servidor]
