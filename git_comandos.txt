@@ -37,12 +37,31 @@ Directorio de trabajo | preparacion o staing | repositirio local || repositirio 
 33. git branch [saber que ramas existen]
 34. git remote add origin https://github.com/dandres10/hyperblog.git[añadir un repositirio remoto]
 35. git remote [verificar que si se añadio el repositorio remoto]
-36. git remote -v [que puedo hacer con el repositirio remoto hagale al comando y se da cuenta]
+36. git remote -v [que puedo hacer con el repositirio remoto hagale al comando y se da cuenta, es la url del repositorio]
 37. git push origin master [enviar a  mi repositirio remoto la rama master, literal enviarle lo que sea]
 38. git pull origin master [traerme lo que esta en el repositirio remoto]
 39. git pull origin master --allow-unrelated-histories [unir dos historias a las malas "solo pasa al crear el repositorio remoto por primera vez"]
-40.  
-41.
+40. git config -l [configuracion local de git] 
+41. git remote set-url origin git@github.com:dandres10/hyperblog.git [cambiar la url de repositorio]
+42. git pull origin master [traerme los cambios del origin a master(local)]
+43. git diff [23. y  mirar que ha cambiado entre el origin y la rama local que en este caso es master]
+44. git push origin master [enviar cambios de mi rama master local al repositirio remoto "origin"]
+45. git log --all --graph [pinta las ramas de los commits]
+46. git log --all --graph --decorate --oneline [45. | mas comprimido la informacion]
+47. git tag -a v0.1 -m "resultado del las primeras clases del curso" cbc9f91 [colocar un tag (puede hacer referencia a las versiones estables del proyecto este id de un commit minificado cbc9f91 es una version estable)]
+48. git tag [ver mis tags || versiones estables de entre todos mis commit]
+49. git show-ref --tags [ver a que referencia hace ese tag "que commit"]
+50. git push origin --tags [subir los tags al repositorio]
+51. git tag -d dormido [eliminar un tag. en github no se borra toca de una manera especial 52.]
+52. git push origin :refs/tags/dormido [asi se borra de github un tag]
+53. git show-branch [ramas que existen con una mejor descripcion]
+54. git show-branch --all [la misma que la 53. pero con mas informacion]
+55. gitk [muestra todo de manera visual "corre el comando es super wooowooww"]
+56. git push origin cabecera [subir al origen las ramas]
+57. git clone https://github.com/dandres10/hyperblog.git [clonar un repositorio]
+58. 
+
+
 ------------------------comandos en la consola y navegacion----------------------
 01. pwd [en donde estoy parado]
 02. mkdir [crear una carpeta]
@@ -62,5 +81,12 @@ Directorio de trabajo | preparacion o staing | repositirio local || repositirio 
 16. code historia.txt [iniciar este archivo con vs]
 17. esc pausa y ingresar shif + z + z [para guardar y salir de "vi"]
 18. espace + i [para poder empezar a escribir en "vi"]
-
-
+----------------------------consfiguracion de las llaves publicas y privada-------------------
+19. ssh-keygen -t rsa -b 4096 -C "dandresleon64@gmail.com" [generar las llaves publica y privada de git "rsa"-> algoritmo para generar las llaves "4096"-> nivel de complegidad del algoritmo ]
+20. eval $(ssh-agent -s) [verificar que el porceso de las llaves se este ejecutando]
+21. ssh-add ~/.ssh/id_rsa [añadir mi llave privada para que mi pc sepa que existe "~"-> home de mi maquina]
+22. cat id_rsa.pub [ver mi llave publica en la direccion en donde se guarda eso "~"]
+23. cat known_hosts []
+-----------------------------------------------fin consfiguracion de las llaves publicas y privada-----------------------------------
+24.  alias arbolito="git log --all --graph --decorate --oneline" [crear alias para esos comandos super largos]
+25. vim historia.txt [programa de consolola como un blog de notas para guardar y salir es :qw o buscar en google]
