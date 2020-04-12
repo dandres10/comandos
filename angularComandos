@@ -23,9 +23,9 @@
 comandos de ionic 
 1. npm install -g @ionic/cli -> instalar ionic 
 2. ionic start myApp tabs -> crear un proyecto ionic 
-3. 
-4. 
-5. 
+3. ionic serve -> ejecuta el app 
+4. ionic g s services/deseos -> crear un servicio
+5. ionic g page pages/agregar -> agregar una pagina 
 6. 
 7. 
 8. 
