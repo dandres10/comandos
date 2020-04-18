@@ -1,15 +1,15 @@
-1. tsc --warch -> listener para compilar los archivos .ts 
-2. ng new miApp -> crear un nuevo proyecto de angular
-3. ng serve -o -> abrir el proyecto
-4. ng g c component/footer -> crear la arquitectura de un componentenew
-5. npm install bootstrap --save -> instalar el paquete de bootstrap
-6. npm install jquery --save -> instalar jquery
-7. npm install popper.js --save -> instalar popper
-8. ng g c components/buscador --spec=false -> crear un componente sin el archivo de test
-9. ng g p pipes/capitalizado -> hacer un pipe 
-10.
-11.
-12.
+1.   tsc --warch -> listener para compilar los archivos .ts 
+2.   ng new miApp -> crear un nuevo proyecto de angular
+3.   ng serve -o -> abrir el proyecto
+4.   ng g c component/footer -> crear la arquitectura de un componentenew
+5.   npm install bootstrap --save -> instalar el paquete de bootstrap
+6.   npm install jquery --save -> instalar jquery
+7.   npm install popper.js --save -> instalar popper
+8.   ng g c components/buscador --spec=false -> crear un componente sin el archivo de test
+9.   ng g p pipes/capitalizado -> hacer un pipe 
+10.  ng g c components/ngStyle -it -is -> crear un componente con una hoja de estilo css dentro del mismo y html
+11.	 ng g c components/usuario/usuarioNuevo -is -it --flat -> crear un compenete sin carpeta "flat"
+12.	 ng g guard servicios/auth --skipTests -> servicio de autenticacion "guard o  guardia de la rutas"
 13.
 14.
 15.
@@ -21,11 +21,11 @@
 
 
 comandos de ionic 
-1. npm install -g @ionic/cli -> instalar ionic 
-2. ionic start myApp tabs -> crear un proyecto ionic 
-3. ionic serve -> ejecuta el app 
-4. ionic g s services/deseos -> crear un servicio
-5. ionic g page pages/agregar -> agregar una pagina 
+1.   npm install -g @ionic/cli -> instalar ionic 
+2.   ionic start myApp tabs -> crear un proyecto ionic 
+3.   ionic serve -> ejecuta el app 
+4.   ionic g s services/deseos -> crear un servicio
+5.   ionic g page pages/agregar -> agregar una pagina 
 6. 
 7. 
 8. 
