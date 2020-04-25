@@ -10,7 +10,7 @@
 10.  ng g c components/ngStyle -it -is -> crear un componente con una hoja de estilo css dentro del mismo y html
 11.	 ng g c components/usuario/usuarioNuevo -is -it --flat -> crear un compenete sin carpeta "flat"
 12.	 ng g guard servicios/auth --skipTests -> servicio de autenticacion "guard o  guardia de la rutas"
-13.
+13.   suguiente lakjdskf
 14.
 15.
 16.
