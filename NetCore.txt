@@ -1,0 +1,27 @@
+1. Add-Migration Initial ->  Se crear la migracion ("codigo")
+2. Update-database -> se ejecuta la migracion en la base de datos 
+3.  Script-Migration -> obtener el script de base de datos
+3.  Script-Migration -Idempotent -> obtener el script de base de datos de los ultimos cambios
+
+----------------------------------configuraciones-----------------------
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+AutoMapper.Extensions.Microsoft.DependencyInjection
+Azure.Storage.Blobs
+Microsoft.AspNetCore.Mvc.NewtonsoftJson
+System.Linq.Dynamic.Core
+-------------------------repo---------
+https://github.com/gavilanch/CursoRESTfulAPIsASPNETCore
+
+
+
+Scaffold-DbContext 'Data Source=DESKTOP-OPTH6EV\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True' Microsoft.EntityFrameworkCore.SqlServer -ContextDir Data -OutputDir Models
+
+
+Scaffold-DbContext "Data Source=DESKTOP-OPTH6EV\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models  -Context "Contexto/Context"
+
+
+
+Base.Datos.Contexto.Entidades
+
+https://localhost:44338/swagger/index.html
