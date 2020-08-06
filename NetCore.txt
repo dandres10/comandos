@@ -1,7 +1,7 @@
 1. Add-Migration Initial ->  Se crear la migracion ("codigo")
 2. Update-database -> se ejecuta la migracion en la base de datos 
-3.  Script-Migration -> obtener el script de base de datos
-3.  Script-Migration -Idempotent -> obtener el script de base de datos de los ultimos cambios
+3. Script-Migration -> obtener el script de base de datos
+3. Script-Migration -Idempotent -> obtener el script de base de datos de los ultimos cambios
 
 ----------------------------------configuraciones-----------------------
 Microsoft.EntityFrameworkCore.SqlServer
@@ -10,6 +10,9 @@ AutoMapper.Extensions.Microsoft.DependencyInjection
 Azure.Storage.Blobs
 Microsoft.AspNetCore.Mvc.NewtonsoftJson
 System.Linq.Dynamic.Core
+Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite
+Microsoft.EntityFrameworkCore.InMemory
+Moq
 -------------------------repo---------
 https://github.com/gavilanch/CursoRESTfulAPIsASPNETCore
 
@@ -25,3 +28,18 @@ Scaffold-DbContext "Data Source=DESKTOP-OPTH6EV\SQLEXPRESS;Initial Catalog=Prueb
 Base.Datos.Contexto.Entidades
 
 https://localhost:44338/swagger/index.html
+
+Mire donde esta parado en que poryecto en la consola de nuget 
+Scaffold-DbContext "Data Source=DESKTOP-OPTH6EV\SQLEXPRESS;Initial Catalog=DigitalWare;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Contexto/Entidades  -Context Contexto
+
+
+//var esValido = TryValidateModel(entidadDTO);
+
+            //if (!esValido)
+            //{
+            //    string messages = string.Join("/", ModelState.Values
+            //                            .SelectMany(x => x.Errors)
+            //                            .Select(x => x.ErrorMessage));
+            //    var data = messages.Split("/");
+            //    return BadRequest(ModelState);
+            //}
