@@ -12,7 +12,7 @@
 12.	 ng g guard servicios/auth --skipTests -> servicio de autenticacion "guard o  guardia de la rutas"
 13.  ng g s services/deseos -> crear un servicio
 14.	 ng g m appRouting --flat -> crear el archivo de las rutas 
-15.	 ng f m -> es para generar un modulo como para añadir material al angular 
+15.	 ng g m -> es para generar un modulo como para añadir material al angular 
 16.	 ng g c componentes/mapa --module=app.module -> cuando hay mas de un modulo hay que especificar que modulo utilizar para que el componente implemente dicho modulo  
 17.	 ng build --prod -> crear carpeta disk para desplegar la aplicacion en el servidor	
 18.

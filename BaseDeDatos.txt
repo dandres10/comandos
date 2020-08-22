@@ -1,0 +1,38 @@
+consultas base de datos
+
+Indice 
+1 Crear una nueva columnan
+2 Crear un CONSTRAINT para una columnan
+3 Hora de base de datos
+4 Pasar una columna a null
+5 Ejecutar y hacer commit despues
+
+----------------------------------Crear una nueva columnan 1
+ALTER TABLE [Celula].[TipoCelula]
+ADD idMaestroDetalle int null;
+----------------------------------fin
+
+----------------------------------Crear un CONSTRAINT para una columnan 2
+ALTER TABLE [Celula].[TipoCelula]
+ADD CONSTRAINT PK_TipoCelula_MaestroDetalle FOREIGN  KEY( idMaestroDetalle ) REFERENCES [Administracion].[MaestroDetalle] (idMaestroDetalle);
+----------------------------------fin
+
+----------------------------------Hora de base de datos 3
+SYSDATETIME
+----------------------------------fin
+
+----------------------------------Pasar una columna a null  4
+ALTER TABLE [Celula].[Miembro] ALTER COLUMN idCelula int NULL
+----------------------------------fin
+
+----------------------------------Ejecutar y hacer commit despues
+Begin tran
+update SR
+SET SR.idRol = 3 
+FROM seguridad.Acceso AS SA INNER  JOIN Seguridad.AccesoRol AS SR ON SA.idAcceso = SR.idAcceso
+where SA.usuario like '%1@%'
+
+
+Rollback
+commit
+-----------------------------------fin

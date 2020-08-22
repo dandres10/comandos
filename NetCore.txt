@@ -5,6 +5,7 @@
 
 ----------------------------------configuraciones-----------------------
 Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Design
 Microsoft.EntityFrameworkCore.Tools
 AutoMapper.Extensions.Microsoft.DependencyInjection
 Azure.Storage.Blobs
@@ -30,7 +31,9 @@ Base.Datos.Contexto.Entidades
 https://localhost:44338/swagger/index.html
 
 Mire donde esta parado en que poryecto en la consola de nuget 
-Scaffold-DbContext "Data Source=DESKTOP-OPTH6EV\SQLEXPRESS;Initial Catalog=DigitalWare;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Contexto/Entidades  -Context Contexto
+Scaffold-DbContext "Data Source=DESKTOP-1EBTD6O\SQLEXPRESS;Initial Catalog=PeliculasAPI;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Contexto/Entidades  -Context Contexto
+
+
 
 
 //var esValido = TryValidateModel(entidadDTO);
@@ -43,3 +46,5 @@ Scaffold-DbContext "Data Source=DESKTOP-OPTH6EV\SQLEXPRESS;Initial Catalog=Digit
             //    var data = messages.Split("/");
             //    return BadRequest(ModelState);
             //}
+			
+			92e2a6807c69dc62c113518b41f5ba36296a3ad9
