@@ -34,7 +34,7 @@ Mire donde esta parado en que poryecto en la consola de nuget
 Scaffold-DbContext "Data Source=DESKTOP-1EBTD6O\SQLEXPRESS;Initial Catalog=PeliculasAPI;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Contexto/Entidades  -Context Contexto
 
 
-
+-----------------------------------------------------------------------------
 
 //var esValido = TryValidateModel(entidadDTO);
 
@@ -48,3 +48,20 @@ Scaffold-DbContext "Data Source=DESKTOP-1EBTD6O\SQLEXPRESS;Initial Catalog=Pelic
             //}
 			
 			92e2a6807c69dc62c113518b41f5ba36296a3ad9
+			
+-------------------------------------------------------------------
+
+cors--------------------------------------
+parte uno va ConfigureServices
+services.AddCors(options => options.AddPolicy("ApiCorsPolicy", build =>
+            {
+                build.WithOrigins("http://localhost:4200")
+                     .AllowAnyMethod()
+                     .AllowAnyHeader();
+            }));
+parte dos 
+
+va en cConfigure
+app.UseCors("ApiCorsPolicy");
+fin--------------------------------------
+

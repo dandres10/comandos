@@ -5,7 +5,7 @@
 5.   npm install bootstrap --save -> instalar el paquete de bootstrap
 6.   npm install jquery --save -> instalar jquery
 7.   npm install popper.js --save -> instalar popper
-8.   ng g c components/buscador --spec=false -> crear un componente sin el archivo de test
+8.   ng g c components/buscador --skipTests -> crear un componente sin el archivo de test
 9.   ng g p pipes/capitalizado -> hacer un pipe 
 10.  ng g c components/ngStyle -it -is -> crear un componente con una hoja de estilo css dentro del mismo y html
 11.	 ng g c components/usuario/usuarioNuevo -is -it --flat -> crear un compenete sin carpeta "flat"
@@ -15,9 +15,10 @@
 15.	 ng g m -> es para generar un modulo como para añadir material al angular 
 16.	 ng g c componentes/mapa --module=app.module -> cuando hay mas de un modulo hay que especificar que modulo utilizar para que el componente implemente dicho modulo  
 17.	 ng build --prod -> crear carpeta disk para desplegar la aplicacion en el servidor	
-18.
-19.
-20.
+18.	 ng g c contador/hijo --skipTests -is -> componente sin css y el archivo de pruebas
+19.  npm install @ngrx/store --save -> instalar ngrx.io
+20.  npm install @ngrx/store-devtools --save -> instalar complemento de chrome
+21.  ng g m pages/login --routing -> crear un archivo de rutas y un modulo para esa pagina
 1233891911
 
 comandos de ionic 
@@ -66,3 +67,10 @@ npm install --save-dev @angular/cli@latest
 
 AIzaSyC2NdlExyCTBBJnlrww_4DJpf9TdB_uq0Q
 ng serve --proxy-config proxy.conf.json
+
+----------------------------------------redux
+
+,{ runtimeChecks: {
+      strictStateImmutability: false,
+      strictActionImmutability: true,
+    }}

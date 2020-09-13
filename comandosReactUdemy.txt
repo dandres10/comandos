@@ -1,0 +1,11 @@
+
+1.  npx --version -> saber que version de react tengo instalada
+2.  npx create-react-app my-app -> crear un proyecto de react
+3.	npm start -> inicializar el proyecto 
+4.
+5.
+6.
+7.
+8.
+9.
+10.

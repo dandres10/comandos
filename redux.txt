@@ -1,0 +1,12 @@
+1.  npm init                                 -> iniciar un proyecto de node 
+2.  npm install -g typescript                -> tener typescript con node
+3.  npm install -g ts-node                   -> instalacion necesaria 
+4.  npm install -g typescript                -> instalacion necesaria
+5.  ts-node app-1.ts                         -> para ejecutar un archivo
+6.  npm install ts-node --save-dev           -> sin permisos de administrador
+7.  npm install typescript --save-dev        -> sin permisos administrador
+8. 	./node_modules/.bin/ts-node app-1.ts 	 -> ejecutar sin permisos de administrador
+9.  npm i redux                              -> instalacion redux puro (no para angular)
+
+-----Trabajando con angular
+
