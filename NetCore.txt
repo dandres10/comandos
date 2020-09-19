@@ -7,6 +7,7 @@
 Microsoft.EntityFrameworkCore.SqlServer
 Microsoft.EntityFrameworkCore.Design
 Microsoft.EntityFrameworkCore.Tools
+
 AutoMapper.Extensions.Microsoft.DependencyInjection
 Azure.Storage.Blobs
 Microsoft.AspNetCore.Mvc.NewtonsoftJson
@@ -23,6 +24,8 @@ Scaffold-DbContext 'Data Source=DESKTOP-OPTH6EV\SQLEXPRESS;Initial Catalog=Prueb
 
 
 Scaffold-DbContext "Data Source=DESKTOP-OPTH6EV\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models  -Context "Contexto/Context"
+
+1. Scaffold-DbContext "Data Source=DESKTOP-1EBTD6O\SQLEXPRESS;Initial Catalog=AdventureWorks2019;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models  -Context "Contexto/Context"
 
 
 
