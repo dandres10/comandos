@@ -5,8 +5,8 @@
 4.  npm run test -> correr los test (presionar w despues de correr el comando 4 para mirar mas opciones)
 5.	npm install --save-dev enzyme-to-json -> instalacion para las pruebas de los componentes [item Atajos de teclado -> 3]
 6.  npm i --save-dev enzyme enzyme-adapter-react-16 -> instalacion para las pruebas de los componentes [item Atajos de teclado -> 4]
-7.
-8.
+7.	npm run build -> genera el compilado para publicar una aplicacion de react
+8.  http-server -o -> correr esta comando si esta instalado 5. en los atajos de teclado , para ver el build arriba en un servidor local
 9.
 10.
 
@@ -16,3 +16,4 @@
 2.  test + tap -> genera un la estructura de un test de React
 3.  https://enzymejs.github.io/enzyme/ -> instalacion para las pruebas de los componentes
 4.  https://www.npmjs.com/package/enzyme-to-json -> instalacion para las pruebas de los componentes
+5.  https://www.npmjs.com/package/http-server -> instalacion de un localhost para probar react el despliege

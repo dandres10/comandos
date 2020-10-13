@@ -19,7 +19,8 @@
 19.  npm install @ngrx/store --save -> instalar ngrx.io
 20.  npm install @ngrx/store-devtools --save -> instalar complemento de chrome
 21.  ng g m pages/login --routing -> crear un archivo de rutas y un modulo para esa pagina
-1233891911
+22.  ng build --prod --base-href="./" -> aplicacion para produccion con ./
+
 
 comandos de ionic 
 1.   npm install -g @ionic/cli -> instalar ionic 
@@ -27,21 +28,37 @@ comandos de ionic
 3.   ionic serve -> ejecuta el app 
 4.   ionic g s services/deseos -> crear un servicio
 5.   ionic g page pages/agregar -> agregar una pagina 
-6. 
-7. 
-8. 
-9.  
-10.
-11.
-12.
-13.
-14.
-15.
-16.
-17.
-18.
-19.
-20.
+6.   ionic serve --lab -> ver la aplicacion en os y android simultaneamente
+7.   ionic g p pages/inicio -> crear una pagina 
+8.   ionic g m components -> crear un modulo
+9.   ionic g c  components/header -> crear un componente
+10.	 npm i -D @types/googlemaps -> instalar google maps y utilizarlo con typescript [https://developers.google.com/maps/documentation/javascript/using-typescript]
+10.1 ionic serve -c -> 
+-------------> capacitor delpliege en android
+11.  ionic build -> generar el archivo para desplegar
+12.  ionic capacitor add android -> despues del paso 11. se ejecuta este comando
+13.  ionic capacitor copy android -> genrar el archivo para abrir el proyecto en android
+14.  ionic capacitor run android -l --host=192.168.192.1 -> listener para compilar en android super rapido
+15.  ionic integrations disable capacitor -> deshabilitar capacitor
+16.  ionic integrations enable capacitor -> habilitado capacitor
+-------------> cordova delpliege en android
+16.  npm i -g cordova -> instalar cordova 
+17.  cordova.cmd platform add android --save -> configurar cordova en angular
+18.  ionic cordova platform remove android -> remover el comando [.17]
+19.  ionic cordova prepare android -> generar el archivo de android
+20.  ionic integrations enable cordova --add -> volver a generar archivo xml
+21.	 npm i -g native-run -> instlar para poder ver que dispositivos puedo simular.
+22.  cordova build --android 
+23.  cordova plugin add cordova-plugin-googlemaps
+24.  npm i cordova-plugin-nativegeocoder
+25.  npm install @ionic-native/geolocation
+26.  ionic integrations enable cordova --add
+
+
+----------------recargar la pagina 
+inyectar en el controlador ->    private activatedRoute: ActivatedRoute,
+  this.router.navigate(["./"], { queryParams: { id: res.id }, relativeTo: this.activatedRoute, })
+ ---------------------------------------------------
 
 
 configuraciones
@@ -74,3 +91,7 @@ ng serve --proxy-config proxy.conf.json
       strictStateImmutability: false,
       strictActionImmutability: true,
     }}
+	
+	-----------------------
+	atob() -> desencriptar una base 64 
+	ptoa() -> emcriptar a base 64
