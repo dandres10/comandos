@@ -1,6 +1,7 @@
 1.   tsc --warch -> listener para compilar los archivos .ts 
 2.   ng new miApp -> crear un nuevo proyecto de angular
-3.   ng serve -o -> abrir el proyecto
+3.   ng serve -o -> abrir el proyecto 
+3.1  ng serve --port 4401  -> abrir el proyecto en un puerto deseado
 4.   ng g c component/footer -> crear la arquitectura de un componentenew
 5.   npm install bootstrap --save -> instalar el paquete de bootstrap
 6.   npm install jquery --save -> instalar jquery
@@ -57,7 +58,7 @@ comandos de ionic
 
 ----------------recargar la pagina 
 inyectar en el controlador ->    private activatedRoute: ActivatedRoute,
-  this.router.navigate(["./"], { queryParams: { id: res.id }, relativeTo: this.activatedRoute, })
+  this.router.navigate(["./"], { queryParams: { id: res.id }, relativeTo: this.activatedRoute })
  ---------------------------------------------------
 
 
@@ -92,6 +93,6 @@ ng serve --proxy-config proxy.conf.json
       strictActionImmutability: true,
     }}
 	
-	-----------------------
+-----------------------
 	atob() -> desencriptar una base 64 
 	ptoa() -> emcriptar a base 64

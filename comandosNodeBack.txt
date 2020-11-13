@@ -1,0 +1,21 @@
+npm init  -y
+npm install express --save
+npm i morgan
+npm i cors 
+npm i
+npm i -D @types/express @types/morgan
+tsc --init
+npm i typescript
+npm i nodemon
+npm i mongose
+
+
+tsc
+node build/server.js
+
+compilar 
+1. tsc
+2. npm run dev
+
+
+"_id": "5f977f5ffed9522a78e74aec",
