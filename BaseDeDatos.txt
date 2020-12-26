@@ -6,7 +6,9 @@ Indice
 3 Hora de base de datos
 4 Pasar una columna a null
 5 Ejecutar y hacer commit despues
-
+6 Id de las tablas de la base de datos
+7 Tablas de la base de datos
+8 Eliminar una columna
 ----------------------------------Crear una nueva columnan 1
 ALTER TABLE [Celula].[TipoCelula]
 ADD idMaestroDetalle int null;
@@ -25,7 +27,7 @@ SYSDATETIME
 ALTER TABLE [Celula].[Miembro] ALTER COLUMN idCelula int NULL
 ----------------------------------fin
 
-----------------------------------Ejecutar y hacer commit despues
+----------------------------------Ejecutar y hacer commit despues 5
 Begin tran
 update SR
 SET SR.idRol = 3 
@@ -36,3 +38,13 @@ where SA.usuario like '%1@%'
 Rollback
 commit
 -----------------------------------fin
+----------------------------------id de las tablas de la base de datos 6
+
+SELECT OBJECT_ID('MotivoCancelacionCita') AS ID
+--------------------------------------------------
+-------------------------------Tablas de la base de datos 7
+SELECT * FROM information_schema.TABLES;
+-----------------------------------fin
+------------------------------------------Eliminar una columna 8
+ALTER TABLE dbo.doc_exb DROP COLUMN column_b;
+------------------------------------fin

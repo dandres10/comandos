@@ -7,13 +7,29 @@
 6.  npm i --save-dev enzyme enzyme-adapter-react-16 -> instalacion para las pruebas de los componentes [item Atajos de teclado -> 4]
 7.	npm run build -> genera el compilado para publicar una aplicacion de react
 8.  http-server -o -> correr esta comando si esta instalado 5. en los atajos de teclado , para ver el build arriba en un servidor local
-9.
-10.
+9.  npm install react-router-dom -> instalar la libreria de rutas de react
+10. npm install query-string -> instalar libreria para manejar los query-string
 
 
-------Atajos de teclado
+------Atajos de teclado y intalaciones
 1.  rafcp + tap -> genera un componente de React
 2.  test + tap -> genera un la estructura de un test de React
 3.  https://enzymejs.github.io/enzyme/ -> instalacion para las pruebas de los componentes
 4.  https://www.npmjs.com/package/enzyme-to-json -> instalacion para las pruebas de los componentes
 5.  https://www.npmjs.com/package/http-server -> instalacion de un localhost para probar react el despliege
+6.  https://reactrouter.com/web/api/NavLink -> instalacion de las rutas de react 
+
+----Publicar en git
+1. cambiar de nombre la carpeta build a docs
+2. 
+
+<ul className="list-group list-group-flush">
+                {
+                    todos.map((todo,i) => (
+                        <li key={todo.id} className="list-group-item">
+                                <p className="text-center">{i+1}. {todo.desc}</p>
+                                <button className="btn btn-danger">Borrar</button>
+                        </li>
+                    ))
+                }
+            </ul>
