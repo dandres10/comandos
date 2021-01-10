@@ -9,7 +9,12 @@
 8.  http-server -o -> correr esta comando si esta instalado 5. en los atajos de teclado , para ver el build arriba en un servidor local
 9.  npm install react-router-dom -> instalar la libreria de rutas de react
 10. npm install query-string -> instalar libreria para manejar los query-string
-
+11. npm install node-sass ->  instalacion de sass para react [Ayuda -> https://stackoverflow.com/questions/64625050/error-node-sass-version-5-0-0-is-incompatible-with-4-0-0]
+12. npm install react-redux redux -> instalacion de redux para react
+13. npm install firebase -> instalacion de firabase 
+14. npm install --save redux-thunk -> peticiones asincronas [ayuda -> https://www.npmjs.com/package/redux-thunk]
+15. npm install sweetalert2 -> mensajes de alerta [ayuda -> https://sweetalert2.github.io/#download]
+16. npm install moment --save  -> libreria para manejar fechas -> [Ayuda -> https://momentjs.com/]
 
 ------Atajos de teclado y intalaciones
 1.  rafcp + tap -> genera un componente de React
@@ -23,13 +28,3 @@
 1. cambiar de nombre la carpeta build a docs
 2. 
 
-<ul className="list-group list-group-flush">
-                {
-                    todos.map((todo,i) => (
-                        <li key={todo.id} className="list-group-item">
-                                <p className="text-center">{i+1}. {todo.desc}</p>
-                                <button className="btn btn-danger">Borrar</button>
-                        </li>
-                    ))
-                }
-            </ul>
