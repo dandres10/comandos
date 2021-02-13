@@ -9,6 +9,7 @@ Indice
 6 Id de las tablas de la base de datos
 7 Tablas de la base de datos
 8 Eliminar una columna
+9 eliminar una foranea
 ----------------------------------Crear una nueva columnan 1
 ALTER TABLE [Celula].[TipoCelula]
 ADD idMaestroDetalle int null;
@@ -48,3 +49,7 @@ SELECT * FROM information_schema.TABLES;
 ------------------------------------------Eliminar una columna 8
 ALTER TABLE dbo.doc_exb DROP COLUMN column_b;
 ------------------------------------fin
+-----------------------------------------Eliminar una FOREIGN
+alter table libros
+  drop constraint FK_libros_codigoeditorial;
+--------------------------------fin

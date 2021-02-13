@@ -7,6 +7,8 @@
 Microsoft.EntityFrameworkCore.SqlServer
 Microsoft.EntityFrameworkCore.Design
 Microsoft.EntityFrameworkCore.Tools
+Swashbuckle.AspNetCore
+
 
 AutoMapper.Extensions.Microsoft.DependencyInjection
 Azure.Storage.Blobs
@@ -14,7 +16,6 @@ Microsoft.AspNetCore.Mvc.NewtonsoftJson
 System.Linq.Dynamic.Core
 Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite
 Microsoft.EntityFrameworkCore.InMemory
-Moq
 -------------------------repo---------
 https://github.com/gavilanch/CursoRESTfulAPIsASPNETCore
 
@@ -27,6 +28,11 @@ Scaffold-DbContext "Data Source=DESKTOP-OPTH6EV\SQLEXPRESS;Initial Catalog=Prueb
 
 1. Scaffold-DbContext "Data Source=DESKTOP-1EBTD6O\SQLEXPRESS;Initial Catalog=AdventureWorks2019;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models  -Context "Contexto/Context"
 
+Scaffold-DbContext "Data Source=sparking.database.windows.net;Initial Catalog=sparking;Persist Security Info=True;User ID=sparking;Password=9ccf3092-6b76-4f79-9092-a419921a6aa9" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models  -Context "Contexto/Context"
+
+ esta es -> Scaffold-DbContext "Data Source=DESKTOP-1EBTD6O\SQLEXPRESS;Initial Catalog=synergy;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Contexto  -Context "Contexto/Context"
+ 
+ Scaffold-DbContext "Data Source=10.70.1.18,1435;Initial Catalog=SenaDemo;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Contexto  -Context "Contexto/Context"
 
 
 Base.Datos.Contexto.Entidades
@@ -67,4 +73,8 @@ parte dos
 va en cConfigure
 app.UseCors("ApiCorsPolicy");
 fin--------------------------------------
+
+soap-------------------------------------
+SoapCore
+-----------------------------------------
 

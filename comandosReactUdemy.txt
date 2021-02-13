@@ -16,7 +16,7 @@
 15. npm install sweetalert2 -> mensajes de alerta [ayuda -> https://sweetalert2.github.io/#download]
 16. npm install moment --save  -> libreria para manejar fechas -> [Ayuda -> https://momentjs.com/]
 
-------Atajos de teclado y intalaciones
+------Atajos de teclado y instalaciones
 1.  rafcp + tap -> genera un componente de React
 2.  test + tap -> genera un la estructura de un test de React
 3.  https://enzymejs.github.io/enzyme/ -> instalacion para las pruebas de los componentes
@@ -28,3 +28,12 @@
 1. cambiar de nombre la carpeta build a docs
 2. 
 
+----Subir una imagen 
+https://api.cloudinary.com/v1_1/djrjk9gls/upload
+params -> file, upload_preset
+
+
+---------------React + TS
+1.  npx create-react-app mi-app --template typescript -> crear un proyecto de react con TS
+2.  npm start -> inicializar la aplicacion [estar parado en la carpeta del proyecto.]
+3.  
