@@ -10,6 +10,11 @@ Indice
 7 Tablas de la base de datos
 8 Eliminar una columna
 9 eliminar una foranea
+10. insertar dato en base de datos
+11. Cambiar el nombre de una tabla 
+12. cambiar el nombre de una columna
+13. insertar data random
+14. crear una tabla temporal
 ----------------------------------Crear una nueva columnan 1
 ALTER TABLE [Celula].[TipoCelula]
 ADD idMaestroDetalle int null;
@@ -53,3 +58,61 @@ ALTER TABLE dbo.doc_exb DROP COLUMN column_b;
 alter table libros
   drop constraint FK_libros_codigoeditorial;
 --------------------------------fin
+
+------------------------------------insertar dato en base de datos 10
+DECLARE @cnt INT = 7;
+
+WHILE @cnt < 500
+BEGIN
+   insert into Ubicacion(ID,Descripcion,Ciudad,Longitud,Latitud,Direccion) values 
+                         (NEWID(),'Localizacion' , 'D62A1CF5-E98C-4DFE-90D2-2C793C492F01','-74.088746'+CONVERT(varchar, @cnt)  ,  '4.756902'+CONVERT(varchar, @cnt) ,'Cra 20 # 20 - 20')
+   SET @cnt = @cnt + 1;
+END;
+---------------------------------------------------------------------
+
+----------------------------------------Cambiar el nombre de una tabla  11
+EXEC sp_rename 'OrdenImagenologiaAmbulatorio', 'OrdenImagenologia';  
+--------------------------------------------------------------------------
+
+--------------------------------------------cambiar el nombre de una columna 12
+EXEC sp_RENAME 'OrdenImagenologia.EstadoOrdenImagenologiaAmbulatoria' , 'EstadoOrdenImagenologia', 'COLUMN';
+-----------------------
+
+---------------------------------------------insertar data random 13
+DECLARE @cnt INT = 0;
+
+WHILE @cnt < 20
+BEGIN
+
+   insert into DocumentoSolicitud(ID,Documento,EstadoSolicitud,UsuarioRecibe,Ubicacion,Descripcion,FechaSolicitud,UsuarioEntrega,FechaEntrega,PathContrato,FechaFirma)
+    values (NEWID(),
+			'6C27118B-806C-47FA-BE76-04FDBABE5FEF', 
+			(SELECT TOP 1 ID FROM EstadoSolicitud ORDER BY NEWID()),
+			(SELECT TOP 1 U.ID FROM Usuario AS U INNER JOIN Rol AS R ON U.Rol = R.ID WHERE R.ID =  '82A0D443-F670-4951-8C79-D16A1BC61D01'  ORDER BY NEWID()),
+			(Select TOP 1 ID from Ubicacion where Id in ('46FF44FE-78F9-400E-9E04-38FEFBD7427A',
+				'C6EC8578-3548-4F64-A145-61C793BD54C1',
+				'0C42ECE7-4829-4992-B945-75E11BBEABB8',
+				'B34C2B1C-58C9-4DD2-89A7-7CD321E3D101',
+				'B34C2B1C-58C9-4DD2-89A7-7CD321E3D102') ORDER BY NEWID()),
+				'Prestamo '+CONVERT(varchar(250),@cnt),
+				GETDATE()+@cnt,
+				'0C1A0E9B-15C8-4E4F-A13A-72BE052BF402',
+				GETDATE()+@cnt+15,
+				concat ('//documentos//documento', @cnt ,'.pdf'),
+				 GETDATE()+@cnt+5 )
+
+   SET @cnt = @cnt + 1;
+END;
+---------------------------------------------------------------------------
+
+----------------------------------------------------------------crear una tabla temporal 14
+declare @tabla table(ID uniqueidentifier,IDNumerico bigint, Documento uniqueidentifier, EstadoSolicitud uniqueidentifier,
+                     UsuarioRecibe uniqueidentifier, Ubicacion uniqueidentifier, Descripcion varchar(250), FechaSolicitud datetime,
+					 UsuarioEntrega uniqueidentifier,FechaEntrega datetime,PathContrato varchar(max),FechaFirma datetime);
+
+insert into 
+@tabla(ID,IDNumerico,Documento,EstadoSolicitud,UsuarioRecibe,Ubicacion,Descripcion,FechaSolicitud,UsuarioEntrega,FechaEntrega,PathContrato,FechaFirma) 
+select ID,IDNumerico,Documento,EstadoSolicitud,UsuarioRecibe,Ubicacion,Descripcion,FechaSolicitud,UsuarioEntrega,FechaEntrega,PathContrato,FechaFirma 
+from DocumentoSolicitud;
+------------------------------------------------------------------------------------------------
+
