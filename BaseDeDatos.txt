@@ -15,6 +15,7 @@ Indice
 12. cambiar el nombre de una columna
 13. insertar data random
 14. crear una tabla temporal
+15. crear una columan unique
 ----------------------------------Crear una nueva columnan 1
 ALTER TABLE [Celula].[TipoCelula]
 ADD idMaestroDetalle int null;
@@ -115,4 +116,9 @@ insert into
 select ID,IDNumerico,Documento,EstadoSolicitud,UsuarioRecibe,Ubicacion,Descripcion,FechaSolicitud,UsuarioEntrega,FechaEntrega,PathContrato,FechaFirma 
 from DocumentoSolicitud;
 ------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------15. crear una columan unique
+ALTER TABLE ConstraintDemo2 ADD CONSTRAINT UQ__Constrai UNIQUE (ID)
+
+-----------------------------
 

@@ -1,0 +1,40 @@
+1. persona(david). -> declarar un hecho
+2. es_par(X):- 0 is X mod 2. -> declarar una regla
+3. X -> varibles en mayusculas
+4. ?- persona(X). [ X = david; X = n...] -> se consulta la base de conocimiento y el punto y coma es para que siga retornando datos.
+5. _ -> variable anonima
+6. !. -> crear un corte en la ejucucion del backtraking del programa
+7. listar(L) :- L = [1,2,3,4,5]. -> declarar una lista
+8.   listar(L) :-  Cola = [2,3,4,5], L = [1|Cola]. -> declarar una lista
+9.   listar(L) :-  Cabeza = 1, Cola = [2,3[3.1,3.2,3.3],4,5], L = [Cabeza|Cola].	
+10.  dameCabeza([C|L],C). -> cosultar una lista.
+11.  eliminarData([E1,E2| L],L). || eliminarData([_,_| L],L). -> eliminar cabezas.
+12.  progenitor(pedro,[ana,ramon]) -> enlazar mejor la data con listas
+13.  member(5,[1,2,3,5,8]).
+14.  =.. -> operador univ
+15. estructuras 
+estudiantes(
+e1(nombre,apellidos,fecha(dia,mes,año)),
+e2(vladimir,lopez,fecha(22,08,1990))
+).
+16. functor(p(1,2,3), Nombre, Cantidad). -> saber la cantidad de datos que estan en una estructura.
+17. functor(E, p, 3). -> crea una estructura con tres elementos instanciados.
+18. arg(posicion,extructura,elementoquesedevuelve)
+19. read(Chapa, carro(Chapa,_, ListaChoferes)), length(ListaChoferes, cantidad).
+20. write('mensaje'), write(variable ). -> se imprime y se concatena.
+
+
+----------------------
+video 5
+    -> progenitor(clara,X), progenitor(X,jose).
+	-> abuelo(clara,jose).
+	-> bisabuelo(ana,jose).
+	
+video 6,7
+    -> conexion(a,i,_).
+	-> conexion(f,X,Costo).
+	-> tieneArista(h).
+	-> llegar(d,f,i,Cost).
+	-> camino(d,f).
+	-> suma(4,Resultado).
+	

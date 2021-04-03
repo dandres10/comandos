@@ -22,28 +22,30 @@
 21.  ng g m pages/login --routing -> crear un archivo de rutas y un modulo para esa pagina
 22.  ng build --prod --base-href="./" -> aplicacion para produccion con ./
 23.  ng build --prod --base-href= -> aplicacion para produccion asi ""
-24.  http-serve dist/nombredelproyecto -> compilar en modo produccion localmente
+
 
 
 comandos de ionic 
 1.   npm install -g @ionic/cli -> instalar ionic 
 2.   ionic start myApp tabs -> crear un proyecto ionic 
-3.   ionic serve -> ejecuta el app 
+3.   ionic serve -> ejecuta el app  
 4.   ionic g s services/deseos -> crear un servicio
 5.   ionic g page pages/agregar -> agregar una pagina 
 6.   ionic serve --lab -> ver la aplicacion en os y android simultaneamente
-7.   ionic g p pages/inicio -> crear una pagina 
+7.   ionic g p pages/inicio -> crear una pipe
 8.   ionic g m components -> crear un modulo
 9.   ionic g c  components/header -> crear un componente
 10.	 npm i -D @types/googlemaps -> instalar google maps y utilizarlo con typescript [https://developers.google.com/maps/documentation/javascript/using-typescript]
 10.1 ionic serve -c -> 
+11. npm install -g cordova-res -> generar el incono y la pantalla de presentacion 
 -------------> capacitor delpliege en android
 11.  ionic build -> generar el archivo para desplegar
 12.  ionic capacitor add android -> despues del paso 11. se ejecuta este comando
-13.  ionic capacitor copy android -> genrar el archivo para abrir el proyecto en android
-14.  ionic capacitor run android -l --host=192.168.192.1 -> listener para compilar en android super rapido
+13.  ionic capacitor copy android -> genrar el archivo para abrir el proyecto en android(refrescar)
+14.  ionic capacitor run android -l --host=192.168.1.106 -> listener para compilar en android super rapido
 15.  ionic integrations disable capacitor -> deshabilitar capacitor
 16.  ionic integrations enable capacitor -> habilitado capacitor
+17.  npx cap open android -> abrir el proyecyto de android en android
 -------------> cordova delpliege en android
 16.  npm i -g cordova -> instalar cordova 
 17.  cordova.cmd platform add android --save -> configurar cordova en angular
@@ -51,17 +53,23 @@ comandos de ionic
 19.  ionic cordova prepare android -> generar el archivo de android
 20.  ionic integrations enable cordova --add -> volver a generar archivo xml
 21.	 npm i -g native-run -> instlar para poder ver que dispositivos puedo simular.
-22.  cordova build --android 
+22.  cordova build --android -> generar el precompilado de android
 23.  cordova plugin add cordova-plugin-googlemaps
 24.  npm i cordova-plugin-nativegeocoder
 25.  npm install @ionic-native/geolocation
 26.  ionic integrations enable cordova --add
+27.  native-run android --list -> ver que dispositivos tengo para realizar la emulacion. 
+28.  ionic cordova run android --target=ef179b14 -l -> con el comando [27.] tienes el nombre del target, funciona para emular la apk, "-l" es livereload 
+--------------> descargar un pdf ionic
+1. npm install @ionic-native/file-opener cordova-plugin-file-opener2
+import { HttpClientModule } from '@angular/common/http';
+import { FileOpener } from '@ionic-native/file-opener/ngx';
 
 
 ----------------recargar la pagina 
 inyectar en el controlador ->    private activatedRoute: ActivatedRoute,
   this.router.navigate(["./"], { queryParams: { id: res.id }, relativeTo: this.activatedRoute })
- ---------------------------------------------------
+---------------------------------------------------
 
 
 configuraciones
