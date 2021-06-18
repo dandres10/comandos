@@ -15,6 +15,7 @@
 14. npm install --save redux-thunk -> peticiones asincronas [ayuda -> https://www.npmjs.com/package/redux-thunk]
 15. npm install sweetalert2 -> mensajes de alerta [ayuda -> https://sweetalert2.github.io/#download]
 16. npm install moment --save  -> libreria para manejar fechas -> [Ayuda -> https://momentjs.com/]
+17. npm run build -> empaquetar para publicar en un servidor
 
 -------------------------------> Expo instalacion
 1. npm install --global expo-cli -> instalar expo 
@@ -22,8 +23,14 @@
 3. npm start -> compilar el proyecto en la web (correrlo) [se puede scanear el qr y abrirlo directamente en el celular]
 4. expo install expo-image-picker -> seleccionar una imagen del dispositivo
 
+--------------------------------> react native
+1. expo r -c -> limpiar cache
+
+
 ------->Deploy aplication [https://docs.expo.io/distribution/building-standalone-apps/]
 5. expo build:android -> generar el paquete
+
+http://tfs.digitalwaresaas.com.co:8080/OpheliaTeamCollection/OpheliaSuite.V2.Bussiness.Caracterizacion/_git/OpheliaSuiteV2.Bussiness.Caracterizacion.ClientFront
 
 -------------------------------> Fin
 

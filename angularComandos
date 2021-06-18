@@ -37,7 +37,23 @@ comandos de ionic
 9.   ionic g c  components/header -> crear un componente
 10.	 npm i -D @types/googlemaps -> instalar google maps y utilizarlo con typescript [https://developers.google.com/maps/documentation/javascript/using-typescript]
 10.1 ionic serve -c -> 
-11. npm install -g cordova-res -> generar el incono y la pantalla de presentacion 
+11.  npm install -g cordova-res -> generar el incono y la pantalla de presentacion 
+--------------> sqlite
+12.  npm install @ionic-native/sqlite @ionic-native/sqlite-porter -> instalar sql lite
+13.  ionic cordova plugin add cordova-sqlite-storage -> plugin necesario para el comando [12.]
+14.  ionic cordova plugin add uk.co.workingedge.cordova.plugin.sqliteporter -> plugin necesario para el comando [12.]
+------------------------------------------
+------------------> storange
+1. npm i @ionic/storage -> instalr el paquete 
+2. ionic cordova plugin add cordova-sqlite-storage -> instalar el plugin del paquete del comando [1.]
+3. npm install @ionic/storage-angular -> cuando estas usando ionic con angular
+
+----------------
+-----------------> validar si hay conexion a internet
+1. npm i @ionic-native/network
+1.1 ionic cordova plugin add cordova-plugin-network-information -> plugin para android sepa. [1. necesario]
+2. npm i @ionic-native/core
+------------------
 -------------> capacitor delpliege en android
 11.  ionic build -> generar el archivo para desplegar
 12.  ionic capacitor add android -> despues del paso 11. se ejecuta este comando
@@ -49,6 +65,7 @@ comandos de ionic
 -------------> cordova delpliege en android
 16.  npm i -g cordova -> instalar cordova 
 17.  cordova.cmd platform add android --save -> configurar cordova en angular
+17.1 ionic cordova platforms add ios -> añadir la plataforma de ios 
 18.  ionic cordova platform remove android -> remover el comando [.17]
 19.  ionic cordova prepare android -> generar el archivo de android
 20.  ionic integrations enable cordova --add -> volver a generar archivo xml
@@ -60,6 +77,21 @@ comandos de ionic
 26.  ionic integrations enable cordova --add
 27.  native-run android --list -> ver que dispositivos tengo para realizar la emulacion. 
 28.  ionic cordova run android --target=ef179b14 -l -> con el comando [27.] tienes el nombre del target, funciona para emular la apk, "-l" es livereload 
+29.  Registrar los dominios para poder hacer las peticiones -> resources/android/xml
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-archors>
+            <certificates src="system"/>
+        </trust-archors>
+    </base-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">https://davincilb.ophelia.co:8085/</domain>
+        <domain includeSubdomains="true">https://factorydev.digitalwaresaas.com.co:8085/</domain>
+    </domain-config>
+</network-security-config>
+fin 29
 --------------> descargar un pdf ionic
 1. npm install @ionic-native/file-opener cordova-plugin-file-opener2
 import { HttpClientModule } from '@angular/common/http';
@@ -105,4 +137,4 @@ ng serve --proxy-config proxy.conf.json
 	
 -----------------------
 	atob() -> desencriptar una base 64 
-	ptoa() -> emcriptar a base 64
+	btoa() -> enemcriptar a base 64

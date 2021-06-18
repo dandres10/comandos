@@ -1,21 +1,25 @@
-npm init  -y
-npm install express --save
+
 npm i morgan
 npm i cors 
 npm i
 npm i -D @types/express @types/morgan
 tsc --init
 npm i typescript
-npm i nodemon
-npm i mongose
+
+------------Comando curso de udemy
+1.  npm init  -y -> crear el pakage.json 
+2.  npm i nodemon -g -> livereload 
+3.  nodemon index.js -> se ejecuta el archivo inicial del node en livereload
+4.  npm install express || npm i express@4.17.1 -> Express es un framework el cual nos ayudara a montar el backend
+5.  npm i dotenv -> para el manejo de variables de entorno
+6.  process.env -> se imprime en un console log y es como si fuera el appsetting de .net core
+7.  npm i express-validator -> validar modelo de datos request
+8.  npm i mongose -> manejador de la conexion con mongoDB
+9.  npm i bcryptjs -> para encriptar las contraseñas (con este metodo es imposible recuperar la contraseña)
+10. npm i jsonwebtoken -> libreria para el manejo de la sessión.
+11. npm i cors -> colocar una capa de seguridad los cors en una api de node.
+12. npm i moment -> manejador de fechas 
 
 
-tsc
-node build/server.js
-
-compilar 
-1. tsc
-2. npm run dev
-
-
-"_id": "5f977f5ffed9522a78e74aec",
+---------atajos mongoDB compass
+1. crt + r -> recarga las base de datos.
