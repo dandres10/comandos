@@ -23,8 +23,6 @@
 22.  ng build --prod --base-href="./" -> aplicacion para produccion con ./
 23.  ng build --prod --base-href= -> aplicacion para produccion asi ""
 
-
-
 comandos de ionic 
 1.   npm install -g @ionic/cli -> instalar ionic 
 2.   ionic start myApp tabs -> crear un proyecto ionic 
@@ -138,3 +136,7 @@ ng serve --proxy-config proxy.conf.json
 -----------------------
 	atob() -> desencriptar una base 64 
 	btoa() -> enemcriptar a base 64
+white-space: initial; -> que colapce las palabras donde sea 
+
+----------------------------actualizar angular a ultima version 
+ng update @angular/cli @angular/core

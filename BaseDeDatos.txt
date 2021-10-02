@@ -16,6 +16,11 @@ Indice
 13. insertar data random
 14. crear una tabla temporal
 15. crear una columan unique
+16. actualizar una columna a identity(1,1)
+17. listar las tablas de la base de datos
+18. propiedades de una tabla
+19. creacion de una tabla
+20. cuando no quiere dejar realizar el diagrama 
 ----------------------------------Crear una nueva columnan 1
 ALTER TABLE [Celula].[TipoCelula]
 ADD idMaestroDetalle int null;
@@ -80,6 +85,8 @@ EXEC sp_RENAME 'OrdenImagenologia.EstadoOrdenImagenologiaAmbulatoria' , 'EstadoO
 -----------------------
 
 ---------------------------------------------insertar data random 13
+
+--Ejemplo #1
 DECLARE @cnt INT = 0;
 
 WHILE @cnt < 20
@@ -104,6 +111,25 @@ BEGIN
 
    SET @cnt = @cnt + 1;
 END;
+
+---Ejemplo # 2
+DECLARE @cnt INT = 1
+DECLARE @tabla table(ID uniqueidentifier, Numeracion INT IDENTITY (1, 1));
+
+insert into @tabla(ID) (select ID from InstalacionPrestador where Prestador = '7cdd8bcb-444c-40bc-8618-cd5ad1b744a5');
+--select * from @tabla
+
+WHILE @cnt < (select  COUNT(*) from InstalacionPrestador where Prestador = '7cdd8bcb-444c-40bc-8618-cd5ad1b744a5')
+BEGIN
+
+    select ID from @tabla where Numeracion = @cnt
+
+   insert into InstalacionPrestadorServicio(ID,InstalacionPrestador,Servicio) values 
+                         (NEWID(), (select ID from @tabla where Numeracion = @cnt) , (SELECT TOP 1 ID FROM Servicio ORDER BY NEWID()));
+
+DELETE @tabla where Numeracion = @cnt;
+   SET @cnt = @cnt + 1;
+END;
 ---------------------------------------------------------------------------
 
 ----------------------------------------------------------------crear una tabla temporal 14
@@ -121,4 +147,73 @@ from DocumentoSolicitud;
 ALTER TABLE ConstraintDemo2 ADD CONSTRAINT UQ__Constrai UNIQUE (ID)
 
 -----------------------------
+
+-----------------------------------------------------------16.
+Alter Table CharacterizationSheetHead Add ConsecutiveId Int Identity(1,1)
+-----------------------------------------------------------------------
+-----------------------------------------------------------17.
+SELECT * FROM INFORMATION_SCHEMA.TABLES 
+WHERE table_type='BASE TABLE' 
+ORDER BY table_name
+-----------------------------------------------------------------------
+-----------------------------------------------------------18.
+SELECT *
+FROM Information_Schema.Columns
+WHERE TABLE_NAME = 'Morbility'
+ORDER BY COLUMN_NAME
+-----------------------------------------------------------------------
+
+-------------------------------------------19.
+table(
+Numeracion  int IDENTITY(1,1),
+Id int,
+IdTypeHead int,
+IdTypeDetailParent int,
+Code varchar(100),
+[Name] varchar(100),
+[Description] varchar(100));
+----------------------------------------------------------
+
+------------------------------------------20.
+var resutl = _familyPeopleRepository.Entity.Include(i => i.Sheet)
+                                                       .ThenInclude(i => i.Pollster)
+                                                       .GroupBy(g => new { g.Sheet.PollsterId})
+                                                       .Select(s => new CharacterizationSheetHeadDTO 
+                                                       {
+                                                           PollsterId= s.Key.PollsterId ?? Guid.Empty,
+                                                           Assigned = s.Count()
+                                                       }).ToList();
+													   
+-------------------------
+
+-----------------------------------------------21. 
+private List<FamilyPeople> mapFamilyPeople(List<CharacterizationSheetHead> listData, List<InterviewsAppDTO> characterizationSheetHead) 
+        {
+            var result = listData.Join(
+                    characterizationSheetHead,
+                    ld => ld.SheetId,
+                    csh => csh.SheetId,
+                    (ld, csh) => new FamilyPeople
+                    {
+                        SheetId = ld.SheetId,
+                        IdPerson = Guid.NewGuid(),
+                        FullName = csh.NamePerson,
+                        IdSex = csh.IdSex,
+                        BirthDate = csh.BirthDate ?? new DateTime(),                        
+                        DocumentType = csh.DocumentType,
+                        DocumentNumber = csh.DocumentNumber,
+                        Phone = csh.Phone
+                    }
+                ).ToList();
+
+            return result;
+        }
+		
+-------------------------------------------------------------------------------------------------
+													   
+------------------------------------------------------------------------------------- 20.
+use CaracterizacionAPP EXEC sp_changedbowner 'sa';
+---------------------------------------------------------------------------------------
+													   
+
 

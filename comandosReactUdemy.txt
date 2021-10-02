@@ -8,11 +8,15 @@
 7.	npm run build -> genera el compilado para publicar una aplicacion de react
 8.  http-server -o -> correr esta comando si esta instalado 5. en los atajos de teclado , para ver el build arriba en un servidor local
 9.  npm install react-router-dom -> instalar la libreria de rutas de react
+9.1 npm install --save-dev @types/react-router-dom -> instalar la libreria de rutas de react (ts)
+9.2 npm i axios -> peticiones con axios
 10. npm install query-string -> instalar libreria para manejar los query-string
 11. npm install node-sass ->  instalacion de sass para react [Ayuda -> https://stackoverflow.com/questions/64625050/error-node-sass-version-5-0-0-is-incompatible-with-4-0-0]
 12. npm install react-redux redux -> instalacion de redux para react
+12.1 npm install @types/react-redux -> instalar el paso 12. junto con este para que quede tipado.
 13. npm install firebase -> instalacion de firabase 
 14. npm install --save redux-thunk -> peticiones asincronas [ayuda -> https://www.npmjs.com/package/redux-thunk]
+14.1 npm install --save redux-devtools-extension -> instalar el devtoos de redux para verlo en el navegador con typescript
 15. npm install sweetalert2 -> mensajes de alerta [ayuda -> https://sweetalert2.github.io/#download]
 16. npm install moment --save  -> libreria para manejar fechas -> [Ayuda -> https://momentjs.com/]
 17. npm run build -> empaquetar para publicar en un servidor
@@ -29,8 +33,9 @@
 
 ------->Deploy aplication [https://docs.expo.io/distribution/building-standalone-apps/]
 5. expo build:android -> generar el paquete
-
 http://tfs.digitalwaresaas.com.co:8080/OpheliaTeamCollection/OpheliaSuite.V2.Bussiness.Caracterizacion/_git/OpheliaSuiteV2.Bussiness.Caracterizacion.ClientFront
+
+
 
 -------------------------------> Fin
 

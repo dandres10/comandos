@@ -4,10 +4,11 @@
 3. Script-Migration -Idempotent -> obtener el script de base de datos de los ultimos cambios
 
 ----------------------------------configuraciones-----------------------
-Microsoft.EntityFrameworkCore.SqlServer
-Microsoft.EntityFrameworkCore.Design
-Microsoft.EntityFrameworkCore.Tools
+Microsoft.EntityFrameworkCore.SqlServer -> 1. 
+Microsoft.EntityFrameworkCore.Design -> 2. 
+Microsoft.EntityFrameworkCore.Tools -> 3.
 Swashbuckle.AspNetCore
+Microsoft.AspNetCore.Authentication.JwtBearer
 
 
 AutoMapper.Extensions.Microsoft.DependencyInjection
@@ -19,7 +20,7 @@ Microsoft.EntityFrameworkCore.InMemory
 -------------------------repo---------
 https://github.com/gavilanch/CursoRESTfulAPIsASPNETCore
 
-
+HttpContext.Request.Headers[HCTYPE].ToString(), HttpContext.Request.Headers[PRESTADOR].ToString()
 
 Scaffold-DbContext 'Data Source=DESKTOP-OPTH6EV\SQLEXPRESS;Initial Catalog=Prueba;Integrated Security=True' Microsoft.EntityFrameworkCore.SqlServer -ContextDir Data -OutputDir Models
 
@@ -77,4 +78,35 @@ fin--------------------------------------
 soap-------------------------------------
 SoapCore
 -----------------------------------------
+HttpContext.Request.Headers[HCTYPE].ToString()
+----------------------------------------------> consulta recursiva
+public List<ParametrizacionExamenFisico> GetListExamPhysical(Guid typeHCId,Guid prestador)
+        {
+            List<ParametrizacionExamenFisico> result = 
+                _parametrizacionExamenFisicoRepository.Entity
+                .Where(x => x.Prestador.Equals(prestador) && 
+                            x.TipoRegistroMedico.Equals(typeHCId)).Include(i => i.IdsuperiorNavigation)
+                                                                  .Include(i => i.InverseIdsuperiorNavigation)
+                                                                  .Include(i => i.TipoInputNavigation)
+                                                                  .Include(i => i.TipoRegistroMedicoNavigation).ToList();
+
+            result.ForEach(i => {
+                i.InverseIdsuperiorNavigation = i.InverseIdsuperiorNavigation.OrderBy(o => o.Orden).ToList();
+            });
+
+            List<ParametrizacionExamenFisico> resultSuperior = result.Where(x => x.Idsuperior == null).OrderBy(o => o.Orden).ToList(); 
+            
+            return resultSuperior;
+        }
+----------------------------------------------
+
+------------------------------------------------> solo actualizar algunos campos de la base de datos
+
+_procMedicoActividadEstrategia.Context.Attach(entidadqueseentroenlatabla).CurrentValues.SetValues(entidadquesequiereenviarconloscamposrequeridosasetear);
+---------------------------------------------------------------------
+-----------------------------------------------------> solo actualizar algunos campos 2
+  _characterizationSheetHeadRepository.Context
+                    .Update(characterizationSheetHead)                    
+                    .Property(e => e.ConsecutiveId).IsModified = false;
+----------------------------------------------------------------------------------
 
