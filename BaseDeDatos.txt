@@ -21,6 +21,7 @@ Indice
 18. propiedades de una tabla
 19. creacion de una tabla
 20. cuando no quiere dejar realizar el diagrama 
+21. Actualizar una tabla y colocar Primarykey
 ----------------------------------Crear una nueva columnan 1
 ALTER TABLE [Celula].[TipoCelula]
 ADD idMaestroDetalle int null;
@@ -214,6 +215,14 @@ private List<FamilyPeople> mapFamilyPeople(List<CharacterizationSheetHead> listD
 ------------------------------------------------------------------------------------- 20.
 use CaracterizacionAPP EXEC sp_changedbowner 'sa';
 ---------------------------------------------------------------------------------------
+
+------------------------------------------21.
+ ALTER TABLE PersonaSede 
+ADD id uniqueidentifier not null;
+
+ alter table PersonaSede
+  add primary key (id) ;
+---------------------------------------------
 													   
 
 
