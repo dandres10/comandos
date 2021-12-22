@@ -23,6 +23,9 @@ comandos de angular
 21.  ng g m pages/login --routing -> crear un archivo de rutas y un modulo para esa pagina
 22.  ng build --prod --base-href="./" -> aplicacion para produccion con ./
 23.  ng build --prod --base-href= -> aplicacion para produccion asi ""
+24.  ng add @angular/pwa -> comando para activar el server worker
+25.  npm install -g http-server -> instalar un servidor para correr la carpeta dist
+26. http-server -c-1 . -> estar en la ruta de la carperta dist y ejecutar el comando [el comando 25 es requerido].
 
 comandos de angular con jest init test
 1. npm install -g @briebug/jest-schematic -> instalar jest [ayuda https://github.com/briebug/jest-schematic]
