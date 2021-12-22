@@ -20,6 +20,7 @@
 15. npm install sweetalert2 -> mensajes de alerta [ayuda -> https://sweetalert2.github.io/#download]
 16. npm install moment --save  -> libreria para manejar fechas -> [Ayuda -> https://momentjs.com/]
 17. npm run build -> empaquetar para publicar en un servidor
+18. npm upgrade-interactive --latest -> actualizar librerias de react
 
 -------------------------------> Expo instalacion
 1. npm install --global expo-cli -> instalar expo 
