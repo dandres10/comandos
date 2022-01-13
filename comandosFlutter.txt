@@ -1,5 +1,5 @@
-1. 
-2.
+1.  flutter --version -> [conocer la version de flutter]
+2.  flutter doctor -> [validar que la instalacion quedo correctamente] 
 3.
 4.
 5.
