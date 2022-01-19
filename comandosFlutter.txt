@@ -1,7 +1,7 @@
 1.  flutter --version -> [conocer la version de flutter]
 2.  flutter doctor -> [validar que la instalacion quedo correctamente] 
-3.
-4.
+3.  flutter doctor --android-licenses [aceptar las licencias de android]
+4.  control + shif + p -> [crear una aplicacion de flutter]
 5.
 6.
 7.

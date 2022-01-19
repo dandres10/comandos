@@ -24,6 +24,14 @@ comandos de angular
 22.  ng build --prod --base-href="./" -> aplicacion para produccion con ./
 23.  ng build --prod --base-href= -> aplicacion para produccion asi ""
 
+comandos nx
+[ayuda -> https://nx.dev/getting-started/nx-setup]
+1.  npx create-nx-workspace@latest -> crear un proyecto mono repo
+2.  npm install -g nx -> instalar de forma global NX
+3.  nx g @nrwl/angular:lib ui -> agregar el modulo para manejar los componentes transversales, ui es el nombre del modulo.
+4.  nx g @nrwl/angular:component button --project ui -> button es el nombre del componente, y dentro de que modulo debe de ir.  
+5.  nx dep-graph -> ver de forma grafica como esta montado el proyecto monorepo
+
 comandos de angular con jest init test
 1. npm install -g @briebug/jest-schematic -> instalar jest [ayuda https://github.com/briebug/jest-schematic]
 2. ng add @briebug/jest-schematic -> correr este comando en el proyecto [ayuda https://github.com/briebug/jest-schematic]
