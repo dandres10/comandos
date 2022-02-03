@@ -1,0 +1,35 @@
+1.  ^ -> inicio de la linea 
+2.  $ -> fin de linea
+3.  . -> cualquier caracter
+4.  [] -> determina en esa posicion que valores puede tomar
+5.  ^a -> palabras que impiezan por a
+6.  a$ -> palabras que termminan por a
+7.  ^c[aei]s..[aert]$ -> palabra que inicie con 'c' y termine en las siguientes letras [aert] 
+8.  \.$ -> palabras que terminen en punto [la contra barra es para que el punto deje de ser cualquier caracter]
+9.  [^a] -> cualquier caracter excepto los que estan dentro del corchete
+10. [a-d][0-5] -> realizar rangos de datos en una posicion, a hasta la d y 0 a 5. 
+11. hola* -> el asterisco concuerda con cero o mas repeticiones de la expresion regular que le precede (X)
+12. hola? -> el caracter hola concuerda con cero o una aparicion de la expresion regular que le precede
+13. hola+ El signo + concuerda con una o mas repeticiones de la expresion regular que le precede 
+14. hola{2} -> concuerda con n repeticiones pasadas por el {}
+15. hola{2,5} -> repeticion superios e inferior
+16. ^a.*t$|^a.*x$ -> or se cumple una o la otra
+17. (c[aet]){2,2} -> agrupacion y se repite minimo 2 maximo dos veces 
+18. \w -> acepta cualquier caracter alfanumerico y el guion abajo
+19. \W -> lo contrario de el comando 18, signos de puntuacion, espacios.
+20.  \< -> inicio de palabra,  
+21. \> -> fin de palabra 
+22. \b -> limite de palabra
+23. \B -> lo contrario al comando 22
+24. ^([\w])l\1$ -> ejemplo ala , debe conincidir el caracter inicial despues de la l
+
+
+
+-> formato esperado front
+^([0-9]+)+(\.[0-9]{3,3})+(\,[0-9]+)$|^([0-9]+)+(\.[0-9]{3,3})+$|^([0-9]{3,3})$|^([0-9]{1,1})$|^([0-9]{1,1})+(\.[0-9]{3,3})+(\,[0-9]+)$|^([0-9]{2,2})$
+
+-> formato esperado de base de datos
+^([0-9]+)+(\.[0-9]+)$|^([0-9]+)$
+
+   
+ 

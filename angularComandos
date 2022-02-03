@@ -27,6 +27,15 @@ comandos de angular
 25.  npm install -g http-server -> instalar un servidor para correr la carpeta dist
 26. http-server -c-1 . -> estar en la ruta de la carperta dist y ejecutar el comando [el comando 25 es requerido].
 
+comandos nx
+[ayuda -> https://nx.dev/getting-started/nx-setup]
+1.  npx create-nx-workspace@latest -> crear un proyecto mono repo
+2.  npm install -g nx -> instalar de forma global NX
+3.  nx g @nrwl/angular:lib ui -> agregar el modulo para manejar los componentes transversales, ui es el nombre del modulo.
+4.  nx g @nrwl/angular:component button --project ui -> button es el nombre del componente, y dentro de que modulo debe de ir.  
+5.  nx dep-graph -> ver de forma grafica como esta montado el proyecto monorepo
+6.  nx generate @nrwl/angular:app myapp -> crear una aplicacion nueva.
+
 comandos de angular con jest init test
 1. npm install -g @briebug/jest-schematic -> instalar jest [ayuda https://github.com/briebug/jest-schematic]
 2. ng add @briebug/jest-schematic -> correr este comando en el proyecto [ayuda https://github.com/briebug/jest-schematic]
@@ -148,3 +157,44 @@ white-space: initial; -> que colapce las palabras donde sea
 
 ----------------------------actualizar angular a ultima version 
 ng update @angular/cli @angular/core
+
+----------------------------------------------rutas hijas
+
+const routes: Routes = [
+    {
+        path: '',
+        component: HomeComponent
+    },
+    { path: '**', redirectTo: '' }
+];
+
+@NgModule({
+    declarations: [],
+    imports: [RouterModule.forChild(routes)],
+    exports: [],
+    providers: [],
+})
+export class HomeRoutingModule { }
+
+----------------------------------------------------------
+
+------------------------------------------rutas init 
+const routes: Routes = [
+  {
+    path: 'home', loadChildren: () =>
+      import('./modules/home/home.module').then(m => m.HomeModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'home'
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
+
+----------------------
