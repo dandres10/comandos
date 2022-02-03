@@ -61,6 +61,7 @@ Directorio de trabajo | preparacion o staing | repositirio local || repositirio 
 57. git clone https://github.com/dandres10/hyperblog.git [clonar un repositorio]
 58. git add imagenes/dragon.png [añadir una imagen al repositorio]
 59. git add .gitignore [añadir un archivo de configuracion el cual su funcion es ignorar ciertos archivos]
+60. git revert asd564sqq -> [quietar un commmit de la linea del tiempo]
 
 
 ------------------------comandos en la consola y navegacion----------------------
@@ -97,8 +98,27 @@ omni proceso
 
 --Actualizar rama
 1. git pull --rebase origin develop
-2. git add 
+2. git add .
 3. git rebase --continue
 4. git push --force
+--Unir commits 
+1. git rebase -i 7bc2e6910e2e3d5c5bd8d5b7a2a42c514b84c645 -> [Buscar el commit incial desde donde unir los commits]
+
+-- cancelar
+git rebase --abort
+git commit --amend --no-edit
+
+apps\omni-web\src\main.ts
+// if (environment.production) {
+//   enableProdMode();
+//   window.console.log = function () {}; // disable any console.log debugging statements in production mode
+// }
+
+
+
+apps\omni-web\src\test-setup.ts
+
+
+
 
 

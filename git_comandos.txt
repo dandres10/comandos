@@ -108,11 +108,18 @@ omni proceso
 git rebase --abort
 git commit --amend --no-edit
 
+apps\omni-web\src\main.ts
+// if (environment.production) {
+//   enableProdMode();
+//   window.console.log = function () {}; // disable any console.log debugging statements in production mode
+// }
+
 
 
 apps\omni-web\src\test-setup.ts
+3164950735
 
 
-Buenos días Nancy Natalie Valverde Moran, me ayudas por favor con este MR https://gitlab.epic.omnilatam.com/frontend/omni-platform/-/merge_requests/438, gracias.
+
 
 
