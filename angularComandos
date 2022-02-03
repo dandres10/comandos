@@ -31,6 +31,7 @@ comandos nx
 3.  nx g @nrwl/angular:lib ui -> agregar el modulo para manejar los componentes transversales, ui es el nombre del modulo.
 4.  nx g @nrwl/angular:component button --project ui -> button es el nombre del componente, y dentro de que modulo debe de ir.  
 5.  nx dep-graph -> ver de forma grafica como esta montado el proyecto monorepo
+6.  nx generate @nrwl/angular:app myapp -> crear una aplicacion nueva.
 
 comandos de angular con jest init test
 1. npm install -g @briebug/jest-schematic -> instalar jest [ayuda https://github.com/briebug/jest-schematic]
