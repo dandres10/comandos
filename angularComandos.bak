@@ -1,3 +1,4 @@
+comandos de angular 
 1.   tsc --warch -> listener para compilar los archivos .ts 
 2.   ng new miApp -> crear un nuevo proyecto de angular
 3.   ng serve -o -> abrir el proyecto 
@@ -22,7 +23,13 @@
 21.  ng g m pages/login --routing -> crear un archivo de rutas y un modulo para esa pagina
 22.  ng build --prod --base-href="./" -> aplicacion para produccion con ./
 23.  ng build --prod --base-href= -> aplicacion para produccion asi ""
+24.  ng add @angular/pwa -> comando para activar el server worker
+25. npm install -g http-server -> crear un servidor para correr la carpeta dist
 
+comandos de angular con jest init test
+1. npm install -g @briebug/jest-schematic -> instalar jest [ayuda https://github.com/briebug/jest-schematic]
+2. ng add @briebug/jest-schematic -> correr este comando en el proyecto [ayuda https://github.com/briebug/jest-schematic]
+ 
 comandos de ionic 
 1.   npm install -g @ionic/cli -> instalar ionic 
 2.   ionic start myApp tabs -> crear un proyecto ionic 

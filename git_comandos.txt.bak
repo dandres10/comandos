@@ -3,9 +3,9 @@ Extructuta
 Directorio de trabajo | preparacion o staing | repositirio local || repositirio remoto
 
 01. git init [iniciar el repositorio]
-02. git add biografia.txt [aï¿½adir el archivo]
+02. git add biografia.txt [añadir el archivo]
 03. git commit -m "version 1" [guardar en la base de datos del repositorio]
-04. git add . [aï¿½adir todos los cambios hechos a la base de datos del repositorio]
+04. git add . [añadir todos los cambios hechos a la base de datos del repositorio]
 05. git commit -m "Cambios a v1" [guadar los cambios en la db del repositorio]
 06. git status [muestra el estado de los archivos de la base de datos]
 07. git show [cambios que se han hecho]
@@ -35,8 +35,8 @@ Directorio de trabajo | preparacion o staing | repositirio local || repositirio 
 31. git branch cabecera [crear una rama]
 32. git checkout cabecera [cambiar entre ramas]
 33. git branch [saber que ramas existen]
-34. git remote add origin https://github.com/dandres10/hyperblog.git[aï¿½adir un repositirio remoto]
-35. git remote [verificar que si se aï¿½adio el repositorio remoto]
+34. git remote add origin https://github.com/dandres10/hyperblog.git[añadir un repositirio remoto]
+35. git remote [verificar que si se añadio el repositorio remoto]
 36. git remote -v [que puedo hacer con el repositirio remoto hagale al comando y se da cuenta, es la url del repositorio]
 37. git push origin master [enviar a  mi repositirio remoto la rama master, literal enviarle lo que sea]
 38. git pull origin master [traerme lo que esta en el repositirio remoto]
@@ -59,9 +59,8 @@ Directorio de trabajo | preparacion o staing | repositirio local || repositirio 
 55. gitk [muestra todo de manera visual "corre el comando es super wooowooww"]
 56. git push origin cabecera [subir al origen las ramas]
 57. git clone https://github.com/dandres10/hyperblog.git [clonar un repositorio]
-58. git add imagenes/dragon.png [aï¿½adir una imagen al repositorio]
-59. git add .gitignore [aï¿½adir un archivo de configuracion el cual su funcion es ignorar ciertos archivos]
-60. git remote update origin [Actualizar las ramas origin 'refrescar']
+58. git add imagenes/dragon.png [añadir una imagen al repositorio]
+59. git add .gitignore [añadir un archivo de configuracion el cual su funcion es ignorar ciertos archivos]
 60. git revert asd564sqq -> [quietar un commmit de la linea del tiempo]
 
 
@@ -87,7 +86,7 @@ Directorio de trabajo | preparacion o staing | repositirio local || repositirio 
 ----------------------------consfiguracion de las llaves publicas y privada-------------------
 19. ssh-keygen -t rsa -b 4096 -C "dandresleon64@gmail.com" [generar las llaves publica y privada de git "rsa"-> algoritmo para generar las llaves "4096"-> nivel de complegidad del algoritmo ]
 20. eval $(ssh-agent -s) [verificar que el porceso de las llaves se este ejecutando]
-21. ssh-add ~/.ssh/id_rsa [aï¿½adir mi llave privada para que mi pc sepa que existe "~"-> home de mi maquina]
+21. ssh-add ~/.ssh/id_rsa [añadir mi llave privada para que mi pc sepa que existe "~"-> home de mi maquina]
 22. cat id_rsa.pub [ver mi llave publica en la direccion en donde se guarda eso "~"]
 23. cat known_hosts []
 -----------------------------------------------fin consfiguracion de las llaves publicas y privada-----------------------------------
@@ -118,7 +117,6 @@ apps\omni-web\src\main.ts
 
 
 apps\omni-web\src\test-setup.ts
-3164950735
 
 
 
