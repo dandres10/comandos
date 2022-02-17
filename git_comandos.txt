@@ -61,6 +61,7 @@ Directorio de trabajo | preparacion o staing | repositirio local || repositirio 
 57. git clone https://github.com/dandres10/hyperblog.git [clonar un repositorio]
 58. git add imagenes/dragon.png [añadir una imagen al repositorio]
 59. git add .gitignore [añadir un archivo de configuracion el cual su funcion es ignorar ciertos archivos]
+60. git remote update origin [Actualizar las ramas origin 'refrescar']
 
 
 ------------------------comandos en la consola y navegacion----------------------
