@@ -34,6 +34,11 @@ Scaffold-DbContext "Data Source=sparking.database.windows.net;Initial Catalog=sp
  esta es -> Scaffold-DbContext "Data Source=DESKTOP-1EBTD6O\SQLEXPRESS;Initial Catalog=synergy;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Contexto  -Context "Contexto/Context"
  
  Scaffold-DbContext "Data Source=10.70.1.18,1435;Initial Catalog=SenaDemo;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Contexto  -Context "Contexto/Context"
+ 
+
+Synergy generator 
+Scaffold-DbContext "Data Source=DESKTOP-QEFA977\SQLEXPRESS;Initial Catalog=synergy;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Contexto  -Context "Context"
+ 
 
 
 Base.Datos.Contexto.Entidades
@@ -109,4 +114,11 @@ _procMedicoActividadEstrategia.Context.Attach(entidadqueseentroenlatabla).Curren
                     .Update(characterizationSheetHead)                    
                     .Property(e => e.ConsecutiveId).IsModified = false;
 ----------------------------------------------------------------------------------
+
+
+
+
+
+
+
 
