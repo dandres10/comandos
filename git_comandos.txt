@@ -94,7 +94,7 @@ Directorio de trabajo | preparacion o staing | repositirio local || repositirio 
 24.  alias arbolito="git log --all --graph --decorate --oneline" [crear alias para esos comandos super largos]
 25. vim historia.txt [programa de consolola como un blog de notas para guardar y salir es :qw o buscar en google]
 
-
+git pull --rebase origin alpha-develop-3101
 omni proceso 
 
 --Actualizar rama
@@ -108,6 +108,8 @@ omni proceso
 -- cancelar
 git rebase --abort
 git commit --amend --no-edit
+git reset --soft HEAD~1
+git commit --amend -m "your new message"
 
 apps\omni-web\src\main.ts
 // if (environment.production) {
@@ -119,6 +121,9 @@ apps\omni-web\src\main.ts
 
 apps\omni-web\src\test-setup.ts
 3164950735
+
+
+Merge develop into alpha-develop-3101 03-03-22
 
 
 
