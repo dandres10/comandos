@@ -4,22 +4,38 @@ npm i cors
 npm i
 npm i -D @types/express @types/morgan
 tsc --init
-npm i typescript
+npm i -g typescript
+
+
 
 ------------Comando curso de udemy
 1.  npm init  -y -> crear el pakage.json 
 2.  npm i nodemon -g -> livereload 
+2.1 npm install nodemon --save-dev -> solo para cuando se este en entorno de desarrollo
 3.  nodemon index.js -> se ejecuta el archivo inicial del node en livereload
 4.  npm install express || npm i express@4.17.1 -> Express es un framework el cual nos ayudara a montar el backend
 5.  npm i dotenv -> para el manejo de variables de entorno
 6.  process.env -> se imprime en un console log y es como si fuera el appsetting de .net core
 7.  npm i express-validator -> validar modelo de datos request
-8.  npm i mongose -> manejador de la conexion con mongoDB
+8.  npm i mongose || npm install mongoose -> manejador de la conexion con mongoDB
 9.  npm i bcryptjs -> para encriptar las contraseñas (con este metodo es imposible recuperar la contraseña)
 10. npm i jsonwebtoken -> libreria para el manejo de la sessión.
 11. npm i cors -> colocar una capa de seguridad los cors en una api de node.
 12. npm i moment -> manejador de fechas 
 
 
+----------Crear desde cero una aplicacion de node
+1.  npm init  -y -> crear el pakage.json 
+2.  npm install express -> Express es un framework el cual nos ayudara a montar el backend
+3.  npm i dotenv -> para el manejo de variables de entorno
+4.  npm i cors -> colocar una capa de seguridad los cors en una api de node.
+5.  tsc --init -> inicializa la configuracion de TypeScript
+6.  npm i ts-node
+7.  npm i nodemon
+8.  npm i @types/express @types/node
+
+
+
 ---------atajos mongoDB compass
 1. crt + r -> recarga las base de datos.
+2. npm install -g heroku -> instalacion de heroku

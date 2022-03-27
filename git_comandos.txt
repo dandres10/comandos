@@ -63,6 +63,8 @@ Directorio de trabajo | preparacion o staing | repositirio local || repositirio 
 59. git add .gitignore [a�adir un archivo de configuracion el cual su funcion es ignorar ciertos archivos]
 60. git remote update origin [Actualizar las ramas origin 'refrescar']
 60. git revert asd564sqq -> [quietar un commmit de la linea del tiempo]
+61. git tag -a v1.0.0 -m "Fin seccion 8" -> crear un tag es como un punto de restauracion.
+62. git push --tags -> para subir los tags a git
 
 
 ------------------------comandos en la consola y navegacion----------------------
