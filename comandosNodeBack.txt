@@ -22,6 +22,7 @@ npm i -g typescript
 10. npm i jsonwebtoken -> libreria para el manejo de la sessión.
 11. npm i cors -> colocar una capa de seguridad los cors en una api de node.
 12. npm i moment -> manejador de fechas 
+11.  npm i @types/bcryptjs -> para encriptar las contraseñas 
 
 
 ----------Crear desde cero una aplicacion de node
@@ -33,6 +34,10 @@ npm i -g typescript
 6.  npm i ts-node
 7.  npm i nodemon
 8.  npm i @types/express @types/node
+9.  npm i bcryptjs -> para encriptar las contraseñas 
+10. npm i @types/bcryptjs -> para encriptar las contraseñas 
+11. npm i express-validator -> asignar validaciones 
+12. npm i @types/express-validator -> asignar validaciones
 
 
 
