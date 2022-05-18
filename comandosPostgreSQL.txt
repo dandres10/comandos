@@ -1,0 +1,255 @@
+1. crear una tabla
+2. eliminar una columna
+3. crear una columna
+
+
+
+
+
+
+
+
+1 ----------------------------------------------------------------
+create table company(
+id SERIAL PRIMARY KEY,
+name varchar(100) NOT NULL,
+cellPhone varchar(50) not null,
+initialdate date NOT NULL,
+finaldate date NULL,
+returnDate date null,
+state bool NOT NULL,
+country SERIAL NOT null,
+identificationOfTheCompany varchar(100) null,
+address varchar(100) null,
+phone varchar(50) not null
+)
+
+alter table company add constraint FK_company_country foreign key (country) references country (id)
+
+fin 1 ------------------------------------------------------------
+
+2 -------------------------
+alter table company drop column language;
+fin 2 ---------------------
+
+3. ------------------------
+alter table country add column language varchar(10) NOT null default 'en';
+fin 3 ---------------------
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------
+select * from person p
+
+
+create table credit_card(
+id serial primary key,
+"documentNumber" varchar(50) not null,
+"nameOfOwner" varchar(100) not null,
+"cardNumber" varchar(50) not null,
+"initialDate" date NOT NULL,
+"finalDate" date NULL,
+company SERIAL not null,
+"cardValidityMonth" integer not null,
+"cardValidityYear" integer not null,
+"codigoCVV" varchar(10) not null,
+"idType" SERIAL not null,
+state bool NOT null
+)
+
+alter table credit_card add constraint FK_credit_card_company foreign key (company) references company (id);
+alter table credit_card add constraint FK_credit_card_idType foreign key ("idType") references id_type (id);
+
+create table id_type(
+id serial primary key,
+name varchar(100) not null,
+code varchar(10) unique not null,
+state bool NOT null
+)
+
+
+
+create table person_campus(
+id serial unique not null,
+person SERIAL not null,
+campus SERIAL not null,
+state bool NOT null,
+primary key(person,campus)
+)
+
+alter table person_campus add constraint FK_person_campus_person foreign key (person) references person (id);
+alter table person_campus add constraint FK_person_campus_campus foreign key (campus) references campus (id);
+
+
+create table person_company(
+id serial unique not null,
+person SERIAL not null,
+company SERIAL not null,
+state bool NOT null,
+primary key(person,company)
+)
+
+alter table person_company add constraint FK_person_company_person foreign key (person) references person (id);
+alter table person_company add constraint FK_person_company_company foreign key (company) references company (id);
+
+
+create table person_rol(
+id serial not null,
+person SERIAL not null,
+rol SERIAL not null,
+state bool NOT null,
+primary key(person,rol)
+)
+
+alter table person_rol add constraint FK_person_rol_person foreign key (person) references person (id);
+alter table person_rol add constraint FK_person_rol_rol foreign key (rol) references rol (id);
+
+
+create table campus(
+id serial primary key,
+name varchar(100) not null,
+state bool NOT null,
+company SERIAL NOT null,
+"initialDate" date NOT NULL,
+"finalDate" date NULL,
+country SERIAL NOT null,
+"telephoneOne" varchar(100) null,
+"telephoneTwo" varchar(100) null,
+address varchar(100) null
+)
+
+alter table campus add constraint FK_campus_country foreign key (country) references country (id);
+alter table campus add constraint FK_campus_company foreign key (company) references company (id);
+
+create table rol(
+id serial primary key,
+name varchar(50) not null,
+code serial not null,
+state bool NOT NULL
+)
+
+
+create table company(
+id SERIAL PRIMARY KEY,
+name varchar(100) NOT NULL,
+"cellPhone" varchar(50) not null,
+"initialDate" date NOT NULL,
+"finalDate" date NULL,
+"returnDate" date null,
+state bool NOT NULL,
+country SERIAL NOT null,
+"identificationOfTheCompany" varchar(100) null,
+address varchar(100) null,
+phone varchar(50) not null
+)
+
+alter table company add constraint FK_company_country foreign key (country) references country (id);
+
+alter table country add column language varchar(10) NOT null default 'en';
+
+create table country(
+id SERIAL PRIMARY KEY,
+name varchar(100) NOT NULL,
+state bool NOT NULL,
+acronym varchar(100) NOT NULL
+)
+
+
+
+CREATE TABLE public.person (
+	id SERIAL PRIMARY KEY NOT NULL,
+	"name" varchar(100) NOT NULL,
+	state bool NOT NULL,
+	email varchar(100) NOT NULL,
+	"password" varchar(100) NOT NULL,
+	initialdate date NOT NULL,
+	finaldate date NULL,
+	cellphone varchar(100) NOT NULL,
+	CONSTRAINT person_pkey PRIMARY KEY (id)
+);
+
+
+
+
+-------------------------- gestion de informacion de las tablas
+select column_name, data_type, is_nullable from information_schema.columns where table_name = 'person';
+
+
+
+---------------------------- crear un procedure
+CREATE OR REPLACE function func_validate_user_v2(int__id__i int) 
+RETURNS TABLE (int__id__o int ,varchar__name__o varchar(32)) AS 
+$func$ 
+BEGIN RETURN query 
+select id, "name"
+FROM person 
+WHERE id=int__id__i AND state=true; 
+END $func$ LANGUAGE plpgsql;
+
+select * from get_object_fields(1)
+
+
+-----------------------------------------------------------
+
+
+SELECT table_name 
+FROM information_schema.tables 
+WHERE table_schema='public' 
+AND table_type='BASE TABLE';
+
+
+SELECT * 
+FROM information_schema.tables 
+
+--------------------------------------------------procedure retornando apartir de una tabla
+
+CREATE FUNCTION func_listar_person_TABLA()
+RETURNS SETOF person AS
+$BODY$
+DECLARE
+    reg RECORD;
+BEGIN
+    FOR REG IN SELECT * FROM person LOOP
+       RETURN NEXT reg;
+    END LOOP;
+    RETURN;
+END
+$BODY$ LANGUAGE 'plpgsql'
+
+
+------------------------------------------------ tipo de dato 
+CREATE TYPE datos_clientes AS
+(   nombre      VARCHAR(50),
+    direccion   VARCHAR(50),
+    fono        VARCHAR(20)
+);
+
+-----------------------------------------------consultar los tipos de datos creados - las propiedades y la lista de las creadas
+select * from pg_type where typname like 'type_%';
+SELECT udt_name,attribute_name,is_nullable,data_type FROM information_schema.attributes where udt_name = 'person' order by ordinal_position;
+
+-----------------------------------------------------repuesta paginada
+
+CREATE OR REPLACE function func__validate_user__v8(int__id__i int, int__limit__i int, int__offset__i int) 
+RETURNS SETOF type_validate_user_v3 AS 
+$func$ 
+DECLARE
+    count bigint := (SELECT COUNT(*) as count from person where  state=true);
+BEGIN 
+	RETURN query 
+select id, "name", count
+FROM person 
+where  state=true LIMIT int__limit__i OFFSET int__offset__i; 
+END 
+$func$ LANGUAGE plpgsql;
+-----------------------------------------------------------
+

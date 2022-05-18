@@ -19,7 +19,7 @@ npm i -g typescript
 7.  npm i express-validator -> validar modelo de datos request
 8.  npm i mongose || npm install mongoose -> manejador de la conexion con mongoDB
 9.  npm i bcryptjs -> para encriptar las contraseñas (con este metodo es imposible recuperar la contraseña)
-10. npm i jsonwebtoken -> libreria para el manejo de la sessión.
+10. npm i jsonwebtoken && npm i @types/jsonwebtoken -> libreria para el manejo de la sessión.
 11. npm i cors -> colocar una capa de seguridad los cors en una api de node.
 12. npm i moment -> manejador de fechas 
 11.  npm i @types/bcryptjs -> para encriptar las contraseñas 
@@ -38,9 +38,31 @@ npm i -g typescript
 10. npm i @types/bcryptjs -> para encriptar las contraseñas 
 11. npm i express-validator -> asignar validaciones 
 12. npm i @types/express-validator -> asignar validaciones
+13. npm i inversify && npm i @types/inversify -> inyeccion de dependecias 
+14. npm i inversify-express-utils && npm i @types/inversify-express-utils
+15. npm i typeorm -> orm
+16. npm install reflect-metadata --save -> para el orl [15]
+17. npm install @types/node --save-dev -> para el orl [15]
+18. npm i yargs && npm i @types/yargs -> comandos personalizados para ingresar por la consola (Ej: cambiar de ambiente).
+19. npm i colors && npm i @types/colors -> darle color a los mensajes de consola.
+
+--Swagger API documentation, Node js & Express
+1. npm i swagger-jsdoc swagger-express
 
 
 
 ---------atajos mongoDB compass
 1. crt + r -> recarga las base de datos.
 2. npm install -g heroku -> instalacion de heroku
+
+
+
+-------crear variables de entorno en heroku
+1. heroku config:set MONGODB_CNN="mongodb://marlon:1233891911@clustersynergy-shard-00-00.k3y8i.mongodb.net:27017,clustersynergy-shard-00-01.k3y8i.mongodb.net:27017,clustersynergy-shard-00-02.k3y8i.mongodb.net:27017/synergyDB?ssl=true&replicaSet=atlas-8rdym2-shard-0&authSource=admin&retryWrites=true&w=majority" -> crear una varible de entorno
+
+
+
+--------conexion con posgresql
+1. npm i pg && npm i @types/pg
+
+

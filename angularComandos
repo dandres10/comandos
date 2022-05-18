@@ -27,6 +27,13 @@ comandos de angular
 25.  npm install -g http-server -> instalar un servidor para correr la carpeta dist
 26. http-server -c-1 . -> estar en la ruta de la carperta dist y ejecutar el comando [el comando 25 es requerido].
 
+
+desplegar en heroku angular
+1. "@angular/cli": "~13.1.0",
+    "@angular/compiler-cli": "~13.1.0",
+    "typescript": "~4.4.3"  -> adicionar estos paquetes en las dependencias del pakage.json
+2. npm i express -save -> instalar express
+
 comandos nx
 [ayuda -> https://nx.dev/getting-started/nx-setup]
 1.  npx create-nx-workspace@latest -> crear un proyecto mono repo
