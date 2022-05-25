@@ -25,7 +25,10 @@ comandos de angular
 23.  ng build --prod --base-href= -> aplicacion para produccion asi ""
 24.  ng add @angular/pwa -> comando para activar el server worker
 25.  npm install -g http-server -> instalar un servidor para correr la carpeta dist
-26. http-server -c-1 . -> estar en la ruta de la carperta dist y ejecutar el comando [el comando 25 es requerido].
+26.  http-server -c-1 . -> estar en la ruta de la carperta dist y ejecutar el comando [el comando 25 es requerido].
+27.  npm i socket.io-client -> web socket configuration.
+28.   npm install ngx-socket-io@3.0.1 ngx-cookie-service@11.0.1 --save -> cuando se tiene ngx
+
 
 
 desplegar en heroku angular

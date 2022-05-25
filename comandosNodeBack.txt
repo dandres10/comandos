@@ -22,7 +22,9 @@ npm i -g typescript
 10. npm i jsonwebtoken && npm i @types/jsonwebtoken -> libreria para el manejo de la sessión.
 11. npm i cors -> colocar una capa de seguridad los cors en una api de node.
 12. npm i moment -> manejador de fechas 
-11.  npm i @types/bcryptjs -> para encriptar las contraseñas 
+13.  npm i @types/bcryptjs -> para encriptar las contraseñas 
+14. npm install socket.io -> libreria para manejar sockets 
+15. http://localhost:8081/socket.io/socket.io.js -> mirar si quedo bien instalado el comando 14 
 
 
 ----------Crear desde cero una aplicacion de node
