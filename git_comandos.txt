@@ -66,6 +66,8 @@ Directorio de trabajo | preparacion o staing | repositirio local || repositirio 
 61. git tag -a v1.0.0 -m "Fin seccion 8" -> crear un tag es como un punto de restauracion.
 62. git push --tags -> para subir los tags a git
 63. git rm .env --cached -> dejar de versionar un archivo [toca excluirlo primero en el git ignore y hay si se corre este comando]
+64. git tag v1.0.0 -> crear un tag 
+65. git push origin --tags -> subir el tag a la rama origen [ejecutar el comando 64 primero]
 
 
 ------------------------comandos en la consola y navegacion----------------------

@@ -1,0 +1,14 @@
+1.  npm init -> crear el archivo package.json
+2.  node index.js -> ejecutar un archivo index.js
+3.  npm pack -> empaquetar el proyecto [como la carpeta dist]
+4.  npm install <ruta donde se compilo el paquete> -> intalar el paquete de forma local
+5.  npm install <ruta de la url de git donde esta el modulo Ej: https://github.com/dandres10/introduccion-node-js.git>
+6.  npm install <ruta de la url de git donde esta el modulo y indicar que version instalar Ej: https://github.com/dandres10/introduccion-node-js.git#v1.1.0>
+7.  npm uninstall intro-node-js -> eliminar un paquete instalado
+8.  npm link -> crear link [es para mantener la referencia del modulo que este esta construyendo] en el proyecto donde se esta construyendo el modulo
+9.  npm link intro-node-js  -> crear link donde se va a usar el modulo localmente 
+10. npm unlink intro-node-js -> quitar el link de la referencia local de un modulo.
+11. node -> ejecutar la consola de node en la terminal
+12. .exit -> para salir de la terminal de node [paso 11]
+
+ 

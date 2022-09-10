@@ -1,11 +1,10 @@
 1. crear una tabla
 2. eliminar una columna
 3. crear una columna
-
-
-
-
-
+4. consulta recursiva
+5. procedimiento almacenado consulta recursiva
+6. actualizar una columna 
+8. eliminar llave primaria
 
 
 
@@ -35,6 +34,45 @@ fin 2 ---------------------
 3. ------------------------
 alter table country add column language varchar(10) NOT null default 'en';
 fin 3 ---------------------
+
+4. ----------------------------------------------
+WITH RECURSIVE menu_recursive AS (
+   SELECT id, top_id ,0 as nivel,"name" ,state ,description FROM menu where  top_id  = 1 and id = 1
+ UNION ALL
+   SELECT distinct m.id, m.top_id ,nivel +1,m.name ,m.state ,m.description
+   FROM menu m 
+   INNER JOIN menu_recursive r on  m.top_id = r.id and (r.id <> m.id and r.top_id <> m.id)
+)
+SELECT * FROM menu_recursive;
+fin 4 ----------------------------------------------
+
+
+5. ----------------------------------------------
+CREATE OR REPLACE function func__type_main_output__get_recursive_main (indexx int) 
+RETURNS SETOF type_main_output AS 
+$func$ 
+BEGIN 
+	
+RETURN query WITH RECURSIVE menu_recursive AS (
+   SELECT id, top_id ,0 as nivel,"name" ,state ,description FROM menu where  top_id  = indexx and id = indexx
+ UNION ALL
+   SELECT distinct m.id, m.top_id ,nivel +1,m.name ,m.state ,m.description
+   FROM menu m 
+   INNER JOIN menu_recursive r on  m.top_id = r.id and (r.id <> m.id and r.top_id <> m.id)
+)
+SELECT * FROM menu_recursive;
+END 
+$func$ LANGUAGE plpgsql;
+fin 5 ----------------------------------------------
+
+6. -------------------------------------------
+ALTER TABLE country ALTER COLUMN language  SERIAL not null;
+fin 6 ---------------------------------------------
+
+
+8. ----------------------------------
+ALTER TABLE public.menu DROP CONSTRAINT menu_pkey;
+fin 8---------------
 
 
 

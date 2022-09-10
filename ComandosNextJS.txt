@@ -1,0 +1,2 @@
+1. yarn create next-app -> crear una app con next.js
+2. yarn dev && npm i -> para iniciar una aplicacion desacargada desde git.

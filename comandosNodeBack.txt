@@ -23,7 +23,7 @@ npm i -g typescript
 11. npm i cors -> colocar una capa de seguridad los cors en una api de node.
 12. npm i moment -> manejador de fechas 
 13.  npm i @types/bcryptjs -> para encriptar las contraseñas 
-14. npm install socket.io -> libreria para manejar sockets 
+14. npm install socket.io && npm install @types/socket.io -> libreria para manejar sockets 
 15. http://localhost:8081/socket.io/socket.io.js -> mirar si quedo bien instalado el comando 14 
 
 
@@ -47,6 +47,8 @@ npm i -g typescript
 17. npm install @types/node --save-dev -> para el orl [15]
 18. npm i yargs && npm i @types/yargs -> comandos personalizados para ingresar por la consola (Ej: cambiar de ambiente).
 19. npm i colors && npm i @types/colors -> darle color a los mensajes de consola.
+20. npm i -D jest supertest && npm i -D @types/jest supertest && npm i --save-dev @types/supertest -> instalar pruebas unitarias con jest.
+21. set NODE_OPTIONS=--experimental-vm-modules && npx jest -> para que jest pueda entender los imports
 
 --Swagger API documentation, Node js & Express
 1. npm i swagger-jsdoc swagger-express
