@@ -10,5 +10,32 @@
 10. npm unlink intro-node-js -> quitar el link de la referencia local de un modulo.
 11. node -> ejecutar la consola de node en la terminal
 12. .exit -> para salir de la terminal de node [paso 11]
+13. npm adduser -> logearce en la consola de vc
+14. npm publish -> publicar el paquete en npm [validar que el nombre no tenga - y numeros lo bloquean por eso] 
+15. npm version path -> ir incrementado la version del modulo.
+16. npm install mocha chai --sabe-dev -> dependencias para las pruebas unitarias
+17. npm run test -> correr los test de moca y chai
+18. npm i axios -> libreria para consumir servicios 
+19. npm i -D mocha chai nock -> instalar dependencia pero para desarrollo no para produccion
+20. npm install chalk inquirer figlet shelljs -> para gestionar ficheros crear libreria [figlet libreria para mostrar textos grandes en consola como el de angular] [shelljs libreria para generar el fichero sin importar el Sistema operativo] [inquirer toma de decicones en la consola]
+21. npm install --save inquirer@^8.0.0 [se debe ejecutar para el comando 20]
+22. npm uninstall chalk && npm i chalk@4.1.2 -> esta es la version que permite el require
+23. tsc --init -> crear archivo json para TS
+24. npm install chalk inquirer ejs shelljs -> paquetes necesarios para crear el generador CLI
+25. #!/usr/bin/env node -> colocar en el index para que el paquete se pueda utilizar de forma global en el pc
+26. tsc --init -> crear fichero de TS
+27. npm install axios -> Para consumir servicios
+28. npm i @types/node -> cuando una libreria no tiene compilacion con TS se puede usar con el require siempre y cuando se ejecute este comando
+
+
+angular libreria
+1. ng generate library my-lib -p=<nombre del tag> -> crear una libreria en angular
+2. ng build hola -> compilar la libreria 
+3. npm i ncp -> poder copiar los estilos en la carpeta dist cuando sale la libreria a produccion
+4. npm version patch -> subir la version del paquete [debes ubicarte en la carpeta dist y el nombre de la librerira]
+5. npm publish -> debe estar ubicado en la carpeta de la librerira dentro de dist
+
+
+
 
  
