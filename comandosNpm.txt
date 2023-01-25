@@ -29,11 +29,29 @@
 
 
 angular libreria
+0. ng new librerias-angular -> se crea un proyecto basico desde cero 
 1. ng generate library my-lib -p=<nombre del tag> -> crear una libreria en angular
-2. ng build hola -> compilar la libreria 
+2. ng build <nombre de la libreria> -> compilar la libreria, te ubicas en project/y el nombre de la libreria 
 3. npm i ncp -> poder copiar los estilos en la carpeta dist cuando sale la libreria a produccion
 4. npm version patch -> subir la version del paquete [debes ubicarte en la carpeta dist y el nombre de la librerira]
 5. npm publish -> debe estar ubicado en la carpeta de la librerira dentro de dist
+
+react libreria
+1. npx create-react-app my-app -> crear aplicacion de react.
+2. crear la capeta lib-react el mismo nivel del proyecto de react y generar el npm init el pakage.json
+3. npm install -D typescript react @types/react -> comado de configuracion dentro de la carpeta del punto 2
+4. npx tsc --init --rootDir src --outDir lib --lib dom,es6 --module commonjs --target es6 --jsx react --declaration true -> dentro de la misma carpeta del punto 3 correr este comando que crea la configuracion para trabajar la libreria con TS y JS
+5. npm run bulid -> comando se corre dentro de la capeta del punto 2 el cual genera la carpeta complilada
+6. npm link -> se corre en la carpeta del punto 2, lo que hace es un enlace simbolico de la libreria para poderla usar de forma local en el proyecto de react 
+7. npm link <nombre le la libreria> -> se ejecuta ese comando dentro del proyecto local de react
+8. tsc watch -> compilar la libreria de nuevo para que el linq del punto 6 se pueda actualizar con lo nuevo.
+
+Notas
+1. Al instalar unan librerira se debe hacer en el proyecto que contiene todas las 
+   libreriras, despues de eso se debe agregar esa dependencia en el package.json de la propia libreria
+   en peerDependencies y en el archivo ng-package.json dentro de la llave umdModuleIds.
+2. para poder usar la libreria en el proyecto principal y para generar el compilado para publicar
+   se debe agregar el modulo de la libreria al modulo AppModule.
 
 
 
