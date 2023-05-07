@@ -207,4 +207,7 @@ const routes: Routes = [
 export class AppRoutingModule { }
 
 
-----------------------
+----------------------comados para crear micro servcios
+1. npm install --global create-single-spa -> tecnologia que nos ayudara a crear micro servicios
+2. https://www.youtube.com/watch?v=XbNsZSYXBp0&ab_channel=weincode super ayuda
+3. create-single-spa

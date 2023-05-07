@@ -26,6 +26,7 @@
 26. tsc --init -> crear fichero de TS
 27. npm install axios -> Para consumir servicios
 28. npm i @types/node -> cuando una libreria no tiene compilacion con TS se puede usar con el require siempre y cuando se ejecute este comando
+29. https://www.npmjs.com/package/<name> -> valida si el nombre de tu paquete ya existe.
 
 
 angular libreria
