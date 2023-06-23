@@ -1,0 +1,2 @@
+1. npm install --global create-single-spa
+2. npm init single-spa

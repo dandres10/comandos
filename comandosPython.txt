@@ -1,0 +1,4 @@
+1. flask run 
+2. set FLASK_APP=app.py[windows] | export FLASK_APP=app.py[linux] -> configurar las variables de entorno para trabajar 
+3. set FLASK_ENV=development[windows] | export FLASK_ENV=development[linux] ->  configurar las variables de entorno para trabajar en modo development
+4. flask --app app run --debug -> correr flask en modo debug
