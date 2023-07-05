@@ -66,7 +66,13 @@ Directorio de trabajo | preparacion o staing | repositirio local || repositirio 
 61. git tag -a v1.0.0 -m "Fin seccion 8" -> crear un tag es como un punto de restauracion.
 62. git push --tags -> para subir los tags a git
 63. git rm .env --cached -> dejar de versionar un archivo [toca excluirlo primero en el git ignore y hay si se corre este comando]
-
+64. git stash -> guardar los cambios temporalmente de forma local 
+65. git stash list -> ver los cambios locales guardados
+66. git stash apply <nombre del stash> -> aplica los cambios y deja una copia en el stash
+67. git stash pop <nombre del stash> -> aplica los cambios y elimina los archivos del stast
+68. git push origin :feature/FOU-4661-download-report-error-supliers feature/FOU-3441-download-report-error-supliers [cambiar el nombre de la rama en el origen]
+69. git cherry-pick 0c9cbbcaf74818c5b918b14abed369ee16babd61 [traer cambios de una rama a otra]
+70. git branch -m "feature/FOU-3441-download-report-error-supliers" [estar en la rama a la que se le quiere cambiar el nombre]
 
 ------------------------comandos en la consola y navegacion----------------------
 01. pwd [en donde estoy parado]
@@ -99,26 +105,35 @@ Directorio de trabajo | preparacion o staing | repositirio local || repositirio 
 
 git pull --rebase origin alpha-develop-3101
 omni proceso 
-
+--- -> git commit --amend --no-edit --no-verify
 --Actualizar rama
 1. git pull --rebase origin develop
 2. git add .
 3. git rebase --continue
 4. git push --force
 --Unir commits 
-1. git rebase -i 7bc2e6910e2e3d5c5bd8d5b7a2a42c514b84c645 -> [Buscar el commit incial desde donde unir los commits]
+1. git rebase -i ff21defd7abfa85bfa13060dda6c898bbde03da5 -> [Buscar el commit incial desde donde unir los commits]
 
 -- cancelar
 git rebase --abort
 git commit --amend --no-edit
 git reset --soft HEAD~1
-git commit --amend -m "your new message"
+git commit --amend -m "feature/FOU-4023"
+
+--
+
+npm i --legacy-peer-deps -> instalar desde cero node_module y borrar el json-lock
 
 apps\omni-web\src\main.ts
 // if (environment.production) {
 //   enableProdMode();
 //   window.console.log = function () {}; // disable any console.log debugging statements in production mode
 // }
+
+--merge de develop 
+
+feature/merge-master-into-develop-07-07-22
+git merge origin develop
 
 
 
@@ -127,6 +142,87 @@ apps\omni-web\src\test-setup.ts
 
 
 Merge develop into alpha-develop-3101 03-03-22
+this.accountsFacade.loadedAvailableAccounts$
+
+
+- cree la rama -> git checkout -b feature/TS-12003-scrappers-colombia
+- git add . -> agregamos los cambios 
+- commit -> git commit -m "feature/TS-12003-scrappers-colombia"
+- git push -> primer commit git push 
+
+- git add . 
+- git commit --amend --no-edit 
+- git push --force
+
+-git rebase -i <nombre del hash>
+
+
+1. git rebase -i 75f8f02bb955537d98ffd02579e79fcaee13d98e -> [Buscar el commit incial desde donde unir los commits]
+
+
+
+feature/TS-11429-electronic-invoice
+
+https://greensillcol.sharepoint.com/:w:/s/Latam-team-engineering/EZJgfdeD1kBGgOJPcLd3rV8Bft8VRaX4MQmJXZWKJerUJw?e=3JW1kL
+
+
+
+
+0. git checkout -b "feature/TS-11429-electronic-invoice"
+-> primer commit
+1. git add .
+2. git commit -m "feature/TS-11429-electronic-invoice"
+3. git push [salir un error en la consola ]
+
+-> segundo commit n...
+1. git add .
+2. git commit --amend --no-edit
+3. git push --force [reemplazar el hash]
+
+
+feature -> color verde
+hotfix -> color rojo
+release -> color verde
+
+
+www.jenkins.klym.com
+
+
+•  git stash 'en su rama'
+•  git branch -D develop
+•  git remote update origin --prune
+•  git checkout develop
+•  git pull
+•  git checkout 'su rama'
+•  git rebase develop
+•  git stash pop
+
+libreria
+1. aws codeartifact login --tool npm --repository npm-repository --domain klym --domain-owner 852690552614 --region us-east-1
+2. npm i ui-components@0.6.3 --force
+
+Ayudar a juli 440
+confirming-detail-operations.component
+
+nx generate @nrwl/angular:application funder
+npx nx g @nrwl/angular:app funder [x]
+npx nx generate @nrwl/angular:application funder --directory=apps --no-interactive --dry-run
+
+
+ng generate @nrwl/workspace:app name-app 
+npx nx g @nrwl/angular:app name-app
+
+
+
+--Finales
+npx create-nx-workspace@14.5.0 v-one
+npx nx g @nrwl/angular:app funder
+
+
+
+
+
+
 
 
 
