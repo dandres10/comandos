@@ -73,6 +73,9 @@ Directorio de trabajo | preparacion o staing | repositirio local || repositirio 
 68. git push origin :feature/FOU-4661-download-report-error-supliers feature/FOU-3441-download-report-error-supliers [cambiar el nombre de la rama en el origen]
 69. git cherry-pick 0c9cbbcaf74818c5b918b14abed369ee16babd61 [traer cambios de una rama a otra]
 70. git branch -m "feature/FOU-3441-download-report-error-supliers" [estar en la rama a la que se le quiere cambiar el nombre]
+64. git tag v1.0.0 -> crear un tag 
+65. git push origin --tags -> subir el tag a la rama origen [ejecutar el comando 64 primero]
+
 
 ------------------------comandos en la consola y navegacion----------------------
 01. pwd [en donde estoy parado]

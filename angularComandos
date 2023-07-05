@@ -41,10 +41,13 @@ comandos nx
 [ayuda -> https://nx.dev/getting-started/nx-setup]
 1.  npx create-nx-workspace@latest -> crear un proyecto mono repo
 2.  npm install -g nx -> instalar de forma global NX
-3.  nx g @nrwl/angular:lib ui -> agregar el modulo para manejar los componentes transversales, ui es el nombre del modulo.
+3.  npx nx g @nrwl/angular:lib ui   -> agregar el modulo para manejar los componentes transversales, ui es el nombre del modulo.
 4.  nx g @nrwl/angular:component button --project ui -> button es el nombre del componente, y dentro de que modulo debe de ir.  
 5.  nx dep-graph -> ver de forma grafica como esta montado el proyecto monorepo
 6.  nx generate @nrwl/angular:app myapp -> crear una aplicacion nueva.
+7.  npx husky-init && npm install -> instalar husky
+8.  npm i -D pretty-quick -> nos ayuda a que el comando 7 solo valide lo modificado no todo el proyecto.
+9.  npm i validate-branch-name -D -> validar el nombre de las rama cuando se crean 
 
 comandos de angular con jest init test
 1. npm install -g @briebug/jest-schematic -> instalar jest [ayuda https://github.com/briebug/jest-schematic]
@@ -207,4 +210,7 @@ const routes: Routes = [
 export class AppRoutingModule { }
 
 
-----------------------
+----------------------comados para crear micro servcios
+1. npm install --global create-single-spa -> tecnologia que nos ayudara a crear micro servicios
+2. https://www.youtube.com/watch?v=XbNsZSYXBp0&ab_channel=weincode super ayuda
+3. create-single-spa

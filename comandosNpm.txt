@@ -1,0 +1,60 @@
+1.  npm init -> crear el archivo package.json
+2.  node index.js -> ejecutar un archivo index.js
+3.  npm pack -> empaquetar el proyecto [como la carpeta dist]
+4.  npm install <ruta donde se compilo el paquete> -> intalar el paquete de forma local
+5.  npm install <ruta de la url de git donde esta el modulo Ej: https://github.com/dandres10/introduccion-node-js.git>
+6.  npm install <ruta de la url de git donde esta el modulo y indicar que version instalar Ej: https://github.com/dandres10/introduccion-node-js.git#v1.1.0>
+7.  npm uninstall intro-node-js -> eliminar un paquete instalado
+8.  npm link -> crear link [es para mantener la referencia del modulo que este esta construyendo] en el proyecto donde se esta construyendo el modulo
+9.  npm link intro-node-js  -> crear link donde se va a usar el modulo localmente 
+10. npm unlink intro-node-js -> quitar el link de la referencia local de un modulo.
+11. node -> ejecutar la consola de node en la terminal
+12. .exit -> para salir de la terminal de node [paso 11]
+13. npm adduser -> logearce en la consola de vc
+14. npm publish -> publicar el paquete en npm [validar que el nombre no tenga - y numeros lo bloquean por eso] 
+15. npm version path -> ir incrementado la version del modulo.
+16. npm install mocha chai --sabe-dev -> dependencias para las pruebas unitarias
+17. npm run test -> correr los test de moca y chai
+18. npm i axios -> libreria para consumir servicios 
+19. npm i -D mocha chai nock -> instalar dependencia pero para desarrollo no para produccion
+20. npm install chalk inquirer figlet shelljs -> para gestionar ficheros crear libreria [figlet libreria para mostrar textos grandes en consola como el de angular] [shelljs libreria para generar el fichero sin importar el Sistema operativo] [inquirer toma de decicones en la consola]
+21. npm install --save inquirer@^8.0.0 [se debe ejecutar para el comando 20]
+22. npm uninstall chalk && npm i chalk@4.1.2 -> esta es la version que permite el require
+23. tsc --init -> crear archivo json para TS
+24. npm install chalk inquirer ejs shelljs -> paquetes necesarios para crear el generador CLI
+25. #!/usr/bin/env node -> colocar en el index para que el paquete se pueda utilizar de forma global en el pc
+26. tsc --init -> crear fichero de TS
+27. npm install axios -> Para consumir servicios
+28. npm i @types/node -> cuando una libreria no tiene compilacion con TS se puede usar con el require siempre y cuando se ejecute este comando
+29. https://www.npmjs.com/package/<name> -> valida si el nombre de tu paquete ya existe.
+
+
+angular libreria
+0. ng new librerias-angular -> se crea un proyecto basico desde cero 
+1. ng generate library my-lib -p=<nombre del tag> -> crear una libreria en angular
+2. ng build <nombre de la libreria> -> compilar la libreria, te ubicas en project/y el nombre de la libreria 
+3. npm i ncp -> poder copiar los estilos en la carpeta dist cuando sale la libreria a produccion
+4. npm version patch -> subir la version del paquete [debes ubicarte en la carpeta dist y el nombre de la librerira]
+5. npm publish -> debe estar ubicado en la carpeta de la librerira dentro de dist
+
+react libreria
+1. npx create-react-app my-app -> crear aplicacion de react.
+2. crear la capeta lib-react el mismo nivel del proyecto de react y generar el npm init el pakage.json
+3. npm install -D typescript react @types/react -> comado de configuracion dentro de la carpeta del punto 2
+4. npx tsc --init --rootDir src --outDir lib --lib dom,es6 --module commonjs --target es6 --jsx react --declaration true -> dentro de la misma carpeta del punto 3 correr este comando que crea la configuracion para trabajar la libreria con TS y JS
+5. npm run bulid -> comando se corre dentro de la capeta del punto 2 el cual genera la carpeta complilada
+6. npm link -> se corre en la carpeta del punto 2, lo que hace es un enlace simbolico de la libreria para poderla usar de forma local en el proyecto de react 
+7. npm link <nombre le la libreria> -> se ejecuta ese comando dentro del proyecto local de react
+8. tsc watch -> compilar la libreria de nuevo para que el linq del punto 6 se pueda actualizar con lo nuevo.
+
+Notas
+1. Al instalar unan librerira se debe hacer en el proyecto que contiene todas las 
+   libreriras, despues de eso se debe agregar esa dependencia en el package.json de la propia libreria
+   en peerDependencies y en el archivo ng-package.json dentro de la llave umdModuleIds.
+2. para poder usar la libreria en el proyecto principal y para generar el compilado para publicar
+   se debe agregar el modulo de la libreria al modulo AppModule.
+
+
+
+
+ 
