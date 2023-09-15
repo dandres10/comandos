@@ -2,3 +2,25 @@
 2. set FLASK_APP=app.py[windows] | export FLASK_APP=app.py[linux] -> configurar las variables de entorno para trabajar 
 3. set FLASK_ENV=development[windows] | export FLASK_ENV=development[linux] ->  configurar las variables de entorno para trabajar en modo development
 4. flask --app app run --debug -> correr flask en modo debug
+
+
+curso django postgres y angular 
+1.  python [valida si python esta instalado]
+2.  python -m venv <nombre> [crear un virtual environment]
+3.  <nombre>\Scripts\activate [activar el virtual environment del paso 2]
+4.  pip freeze [saber que librerias estan instaladas en el virtual environment]
+5.  <nombre>\Scripts\deactivate [bajar el virtual environment]
+6.  pip install Django==3.2.8 [instalar django dentro el virtual environment - debes activarlo]
+7.  django-admin startproject inmuebles [crear proyecto de django]
+8.  python manage.py startapp inmuebleslist_app [dentro de la ruta del proyecto de django "inmueble" crear la app]
+9.  python manage.py runserver [dentro de la ruta proyecto inmuebles con el virtual environment arriba, subimos el servidor ]
+10. python manage.py migrate [correr las migraciones del proyecto en este caso proyecto inmuebles]
+11. python manage.py createsuperuser [despues de correr las mibraciones se debe crear un super usuario para la administrador de django]
+12. python manage.py makemigrations [ejecutar migraciones - para pasar de modelo a sql]
+13. python manage.py migrate [aplicar la migracion]
+14. pip install djangorestframework [instalar django rest framework]
+15. pip install djangorestframework_simplejwt [instalar la libreria para tener JWT]
+16. pip install django-filter [libreria para realizar consultas con filtro]
+17  pip install psycopg2-binary [instalar libreria para conectarce con postgres]
+
+

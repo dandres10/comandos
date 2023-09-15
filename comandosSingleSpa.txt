@@ -8,3 +8,5 @@ NX
 2. npm install --save-dev @nrwl/angular -> [instalar angular en Nx]
 3. nx g @nrwl/angular:host shell --remote=funder,supplier -> [crear el host y dos aplicaciones]
 4. nx g @nrwl/angular:remote deptor --host=shell -> [crear aplicaciones]
+
+"start": "nx serve shell --open --devRemotes=funder,supplier,deptor"
